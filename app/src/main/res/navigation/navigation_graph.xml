@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/splashFrag">
+
+    <fragment
+        android:id="@+id/splashFrag"
+        android:name="com.indo.news.modules.splash.SplashFrag"
+        android:label="SplashFrag">
+        <action
+            android:id="@+id/action_splashFrag_to_homeFrag"
+            app:destination="@id/homeFrag"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/headlineFrag"
+        android:name="com.indo.news.modules.headline.HeadlineFrag"
+        android:label="HeadlineFrag" />
+    <fragment
+        android:id="@+id/homeFrag"
+        android:name="com.indo.news.modules.home.HomeFrag"
+        android:label="frag_home"
+        tools:layout="@layout/frag_home" />
+    <fragment
+        android:id="@+id/politicFrag"
+        android:name="com.indo.news.modules.politic.PoliticFrag"
+        android:label="frag_politic"
+        tools:layout="@layout/frag_politic" />
+    <fragment
+        android:id="@+id/sportFrag"
+        android:name="com.indo.news.modules.sport.SportFrag"
+        android:label="frag_sport"
+        tools:layout="@layout/frag_sport" />
+</navigation>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="news_image_width">@dimen/_128sdp</dimen>
+    <dimen name="news_image_height">@dimen/_56sdp</dimen>
+    <!--Margin-->
+
+    <dimen name="margin_content_super_small">@dimen/_3sdp</dimen>
+    <dimen name="margin_content_very_small">@dimen/_5sdp</dimen>
+    <dimen name="margin_content_medium_small">@dimen/_7sdp</dimen>
+    <dimen name="margin_content_small">@dimen/_10sdp</dimen>
+    <dimen name="margin_content_medium">@dimen/_15sdp</dimen>
+    <dimen name="margin_plus_min">@dimen/_12sdp</dimen>
+    <dimen name="margin_content_in">@dimen/_20sdp</dimen>
+    <dimen name="margin_content">@dimen/_25sdp</dimen>
+    <dimen name="margin_content_semi_large">@dimen/_30sdp</dimen>
+    <dimen name="margin_content_medium_large">@dimen/_40sdp</dimen>
+    <dimen name="margin_content_large">@dimen/_50sdp</dimen>
+    <dimen name="margin_content_super_large">@dimen/_100sdp</dimen>
+
+    <!-- FONT SIZE -->
+
+    <dimen name="font_super_small">@dimen/_6ssp</dimen>
+    <dimen name="font_very_small">@dimen/_8ssp</dimen>
+    <dimen name="font_small">@dimen/_10ssp</dimen>
+    <dimen name="font_normal">@dimen/_12ssp</dimen>
+    <dimen name="font_semilarge">@dimen/_14ssp</dimen>
+    <dimen name="font_large">@dimen/_16ssp</dimen>
+    <dimen name="font_superlarge">@dimen/_18ssp</dimen>
+    <dimen name="font_big">@dimen/_20ssp</dimen>
+</resources>
