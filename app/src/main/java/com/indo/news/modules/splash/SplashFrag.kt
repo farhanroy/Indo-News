@@ -8,7 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.indo.news.R
 import com.indo.news.databinding.FragSplashBinding
-import com.indo.news.utils.setFragBinding
+import com.indo.news.utils.extension.setFragBinding
 import dagger.android.support.DaggerFragment
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

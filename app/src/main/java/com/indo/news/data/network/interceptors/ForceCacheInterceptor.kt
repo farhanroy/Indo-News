@@ -4,7 +4,6 @@ import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import okhttp3.CacheControl
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response
@@ -15,7 +14,10 @@ class ForceCacheInterceptor(
     override fun intercept(chain: Interceptor.Chain): Response {
         val builder: Request.Builder = chain.request().newBuilder()
         if (!isOnline()) {
-            builder.cacheControl(CacheControl.FORCE_CACHE)
+            val maxStale = 60 * 60 * 24 * 30 // Offline cache available for 30 days
+            builder
+                .header("Cache-Control", "public, only-if-cached, max-stale=$maxStale")
+                .removeHeader("Pragma")
         }
         return chain.proceed(builder.build())
     }

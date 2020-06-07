@@ -9,19 +9,18 @@
             name="isLoading"
             type="Boolean" />
     </data>
-
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.indo.news.modules.sport.SportFrag">
+        tools:context="com.indo.news.modules.entertainment.EntertainmentFrag">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="@{isLoading ? View.GONE : View.VISIBLE}" />
+            android:visibility="@{isLoading ? View.GONE : View.VISIBLE}"/>
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/loadingAnim"

@@ -1,4 +1,4 @@
-package com.indo.news.utils
+package com.indo.news.utils.factory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

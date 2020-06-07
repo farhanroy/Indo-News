@@ -6,7 +6,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
 import com.indo.news.R
 import com.indo.news.databinding.ActMainBinding
-import com.indo.news.utils.setActBinding
+import com.indo.news.utils.extension.setActBinding
 import dagger.android.support.DaggerAppCompatActivity
 
 class MainAct : DaggerAppCompatActivity() {

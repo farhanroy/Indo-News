@@ -1,4 +1,4 @@
-package com.indo.news.utils
+package com.indo.news.utils.extension
 
 import android.app.Activity
 import android.content.Context

@@ -12,7 +12,8 @@ class CacheInterceptor : Interceptor {
             .maxAge(10, TimeUnit.DAYS)
             .build()
         return response.newBuilder()
-            .header("Cache-Control", cacheControl.toString())
+            .header("Cache-Control", "public, max-age=60")
+            .removeHeader("Pragma")
             .build()
     }
 }

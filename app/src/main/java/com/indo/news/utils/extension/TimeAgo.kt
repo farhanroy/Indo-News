@@ -1,6 +1,5 @@
-package com.indo.news.utils
+package com.indo.news.utils.extension
 
-import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 

@@ -5,9 +5,10 @@ import com.indo.news.data.network.NewsService
 import com.indo.news.data.network.interceptors.CacheInterceptor
 import com.indo.news.data.network.interceptors.ErrorInterceptor
 import com.indo.news.data.network.interceptors.ForceCacheInterceptor
-import com.indo.news.utils.Constants
+import com.indo.news.utils.constant.Constants
 import dagger.Module
 import dagger.Provides
+import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -22,6 +23,7 @@ class NetworkModule {
     @Provides
     fun provideOkHttp(application: Application): OkHttpClient {
         val builder = OkHttpClient().newBuilder()
+            .cache(Cache(application.cacheDir, Constants.CACHE_SIZE))
             .connectTimeout(10, TimeUnit.SECONDS)
             .writeTimeout(10, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
