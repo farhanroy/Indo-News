@@ -7,4 +7,6 @@
     <string name="sport">Sport</string>
     <string name="business">Business</string>
     <string name="entertainment">Entertain</string>
+    <string name="vertical_line">|</string>
+    <string name="see_more">See More</string>
 </resources>

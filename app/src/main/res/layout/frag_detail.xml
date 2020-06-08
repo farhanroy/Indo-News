@@ -1,16 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="time"
+            type="String" />
+
+        <variable
+            name="content"
+            type="String" />
+
+        <variable
+            name="data"
+            type="com.indo.news.data.model.Article" />
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.indo.news.modules.detail.DetailFrag">
+        android:layout_height="match_parent">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_content_medium"
+            tools:context="com.indo.news.modules.detail.DetailFrag">
 
-    </FrameLayout>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:text="@{data.title}"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/font_superlarge"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="19dp"
+                tools:text="Real Madrid is the best club in the world, it have players pro like sergio ramos and kareem benzema" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_content_medium_small"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:layout_editor_absoluteX="19dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.source.name}"
+                    android:textColor="@color/colorGreen"
+                    tools:text="Detik.com" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_content_super_small"
+                    android:layout_marginEnd="@dimen/margin_content_super_small"
+                    android:text="@string/vertical_line" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{time}"
+                    tools:text="2 Days Ago" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_content_medium_small"
+                android:text="@{data.description}"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/font_semilarge"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                tools:text="Berikut daftar 25 smarphone dari berbagai produk yang dilengkapi dengan baterai berdaya 5.000 hingga 6.000 mAh." />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageView2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/image_detail_height"
+                android:layout_marginStart="@dimen/margin_content_small"
+                android:layout_marginTop="@dimen/margin_content_medium_small"
+                android:layout_marginEnd="@dimen/margin_content_small"
+                app:imageUrl="@{data.urlToImage}"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                tools:layout_editor_absoluteX="32dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_content_medium_small"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{content}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/font_semilarge" />
+                <TextView
+                    android:id="@+id/seeMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/see_more"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="@dimen/font_semilarge" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

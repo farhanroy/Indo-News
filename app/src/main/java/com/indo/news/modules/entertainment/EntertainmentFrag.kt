@@ -62,8 +62,8 @@ class EntertainmentFrag : DaggerFragment() {
 
     private fun setHeadlineAdapter(news: News) {
         entertainmentAdapter = EntertainmentAdapter(news) {
-            val bundle = bundleOf(Constants.TO_DETAIL to it)
-            findNavController().navigate(R.id.action_entertainmentFrag_to_detailFrag, bundle)
+            val action = EntertainmentFragDirections.actionEntertainmentFragToDetailFrag(it)
+            findNavController().navigate(action)
         }
         with(binding.rv) {
             adapter = entertainmentAdapter

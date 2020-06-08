@@ -61,8 +61,8 @@ class BusinessFrag : DaggerFragment() {
 
     private fun setHomeAdapter(news: News) {
         businessAdapter = BusinessAdapter(news){
-            val bundle = bundleOf(Constants.TO_DETAIL to it)
-            findNavController().navigate(R.id.action_businessFrag_to_detailFrag, bundle)
+            val action = BusinessFragDirections.actionBusinessFragToDetailFrag(it)
+            findNavController().navigate(action)
         }
         with(binding.rv) {
             adapter = businessAdapter

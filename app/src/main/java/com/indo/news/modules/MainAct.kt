@@ -28,7 +28,7 @@ class MainAct : DaggerAppCompatActivity() {
         val bottomNav = binding.bottomNavigationView
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.splashFrag) {
+            if (destination.id == R.id.splashFrag || destination.id == R.id.detailFrag) {
                 bottomNav.visibility = View.GONE
             } else {
                 bottomNav.visibility = View.VISIBLE

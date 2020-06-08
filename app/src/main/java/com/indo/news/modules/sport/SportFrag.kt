@@ -61,8 +61,8 @@ class SportFrag : DaggerFragment() {
 
     private fun setHomeAdapter(news: News) {
         sportAdapter = SportAdapter(news){
-            val bundle = bundleOf(Constants.TO_DETAIL to it)
-            findNavController().navigate(R.id.action_sportFrag_to_detailFrag, bundle)
+            val action = SportFragDirections.actionSportFragToDetailFrag(it)
+            findNavController().navigate(action)
         }
         with(binding.rv) {
             adapter = sportAdapter

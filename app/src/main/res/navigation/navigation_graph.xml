@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/entertainmentFrag"
         android:name="com.indo.news.modules.entertainment.EntertainmentFrag"
-        android:label="HeadlineFrag" >
+        android:label="HeadlineFrag">
         <action
             android:id="@+id/action_entertainmentFrag_to_detailFrag"
             app:destination="@id/detailFrag" />
@@ -26,7 +26,7 @@
         android:id="@+id/homeFrag"
         android:name="com.indo.news.modules.home.HomeFrag"
         android:label="frag_home"
-        tools:layout="@layout/frag_home" >
+        tools:layout="@layout/frag_home">
         <action
             android:id="@+id/action_homeFrag_to_detailFrag"
             app:destination="@id/detailFrag" />
@@ -35,7 +35,7 @@
         android:id="@+id/businessFrag"
         android:name="com.indo.news.modules.business.BusinessFrag"
         android:label="frag_politic"
-        tools:layout="@layout/frag_business" >
+        tools:layout="@layout/frag_business">
         <action
             android:id="@+id/action_businessFrag_to_detailFrag"
             app:destination="@id/detailFrag" />
@@ -44,7 +44,7 @@
         android:id="@+id/sportFrag"
         android:name="com.indo.news.modules.sport.SportFrag"
         android:label="frag_sport"
-        tools:layout="@layout/frag_sport" >
+        tools:layout="@layout/frag_sport">
         <action
             android:id="@+id/action_sportFrag_to_detailFrag"
             app:destination="@id/detailFrag" />
@@ -53,9 +53,16 @@
         android:id="@+id/detailFrag"
         android:name="com.indo.news.modules.detail.DetailFrag"
         android:label="frag_detail"
-        tools:layout="@layout/frag_detail" >
+        tools:layout="@layout/frag_detail">
         <argument
             android:name="news"
             app:argType="com.indo.news.data.model.Article" />
+        <argument
+            android:name="uri"
+            android:defaultValue="Android!"
+            app:argType="String"/>
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="{uri}" />
     </fragment>
 </navigation>

@@ -61,8 +61,8 @@ class HomeFrag : DaggerFragment() {
 
     private fun setHomeAdapter(news: News) {
         homeAdapter = HomeAdapter(news){
-            val bundle = bundleOf(Constants.TO_DETAIL to it)
-            findNavController().navigate(R.id.action_homeFrag_to_detailFrag, bundle)
+            val action = HomeFragDirections.actionHomeFragToDetailFrag(it)
+            findNavController().navigate(action)
         }
         with(binding.rv) {
             adapter = homeAdapter
