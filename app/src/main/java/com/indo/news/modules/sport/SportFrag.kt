@@ -42,6 +42,7 @@ class SportFrag : DaggerFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initLiveData()
+        setSwipeRefresh()
     }
 
     private fun initLiveData() {
@@ -57,6 +58,15 @@ class SportFrag : DaggerFragment() {
                 }
             }
         })
+    }
+
+    private fun setSwipeRefresh() {
+        val swipeRefresh = binding.swipeRefresh
+        swipeRefresh.setOnRefreshListener {
+            swipeRefresh.isRefreshing = true
+            initLiveData()
+            swipeRefresh.isRefreshing = false
+        }
     }
 
     private fun setHomeAdapter(news: News) {

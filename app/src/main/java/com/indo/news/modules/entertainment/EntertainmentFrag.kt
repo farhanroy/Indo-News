@@ -43,6 +43,7 @@ class EntertainmentFrag : DaggerFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initLiveData()
+        setSwipeRefresh()
     }
 
     private fun initLiveData() {
@@ -58,6 +59,15 @@ class EntertainmentFrag : DaggerFragment() {
                 }
             }
         })
+    }
+
+    private fun setSwipeRefresh() {
+        val swipeRefresh = binding.swipeRefresh
+        swipeRefresh.setOnRefreshListener {
+            swipeRefresh.isRefreshing = true
+            initLiveData()
+            swipeRefresh.isRefreshing = false
+        }
     }
 
     private fun setHeadlineAdapter(news: News) {

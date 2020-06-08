@@ -57,12 +57,5 @@
         <argument
             android:name="news"
             app:argType="com.indo.news.data.model.Article" />
-        <argument
-            android:name="uri"
-            android:defaultValue="Android!"
-            app:argType="String"/>
-        <deepLink
-            android:id="@+id/deepLink"
-            app:uri="{uri}" />
     </fragment>
 </navigation>

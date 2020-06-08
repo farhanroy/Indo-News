@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -10,28 +13,38 @@
             type="Boolean" />
     </data>
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.indo.news.modules.business.BusinessFrag">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="@{isLoading ? View.GONE : View.VISIBLE}" />
+            android:layout_height="match_parent">
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/loadingAnim"
-            android:layout_width="@dimen/margin_content_super_large"
-            android:layout_height="@dimen/margin_content_super_large"
-            android:layout_gravity="center"
-            android:visibility="@{isLoading ? View.VISIBLE : View.GONE}"
-            app:lottie_autoPlay="true"
-            app:lottie_fileName="loading_anim.json"
-            app:lottie_loop="true" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    </FrameLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="@{isLoading ? View.GONE : View.VISIBLE}" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/loadingAnim"
+                    android:layout_width="@dimen/margin_content_super_large"
+                    android:layout_height="@dimen/margin_content_super_large"
+                    android:layout_gravity="center"
+                    android:visibility="@{isLoading ? View.VISIBLE : View.GONE}"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="loading_anim.json"
+                    app:lottie_loop="true" />
+            </FrameLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
