@@ -70,7 +70,7 @@ class SportFrag : DaggerFragment() {
     }
 
     private fun setHomeAdapter(news: News) {
-        sportAdapter = SportAdapter(news){
+        sportAdapter = SportAdapter(requireContext(),news){
             val action = SportFragDirections.actionSportFragToDetailFrag(it)
             findNavController().navigate(action)
         }

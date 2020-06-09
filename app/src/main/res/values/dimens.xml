@@ -2,6 +2,7 @@
 <resources>
     <dimen name="news_image_width">@dimen/_128sdp</dimen>
     <dimen name="news_image_height">@dimen/_56sdp</dimen>
+    <dimen name="news_image_height2">@dimen/_144sdp</dimen>
     <dimen name="image_detail_height">@dimen/_180sdp</dimen>
     <!--Margin-->
 

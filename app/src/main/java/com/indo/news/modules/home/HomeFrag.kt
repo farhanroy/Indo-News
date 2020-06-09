@@ -70,7 +70,7 @@ class HomeFrag : DaggerFragment() {
     }
 
     private fun setHomeAdapter(news: News) {
-        homeAdapter = HomeAdapter(news){
+        homeAdapter = HomeAdapter(requireContext(),news){
             val action = HomeFragDirections.actionHomeFragToDetailFrag(it)
             findNavController().navigate(action)
         }

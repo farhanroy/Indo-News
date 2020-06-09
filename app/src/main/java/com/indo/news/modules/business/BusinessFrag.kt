@@ -70,7 +70,7 @@ class BusinessFrag : DaggerFragment() {
     }
 
     private fun setHomeAdapter(news: News) {
-        businessAdapter = BusinessAdapter(news){
+        businessAdapter = BusinessAdapter(requireContext(), news){
             val action = BusinessFragDirections.actionBusinessFragToDetailFrag(it)
             findNavController().navigate(action)
         }
