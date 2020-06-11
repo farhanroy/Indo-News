@@ -24,7 +24,9 @@ Aplikasi pusat berita indonesia terlengkap akurat dan terpercaya, dari berita tr
   </td>
 </tr>
 </p>
-👤 **Farhan Roy**
 
-- Facebook: [farhansekargadung](https://web.facebook.com/farhansekargadung)
-- Github: [@farhan-roy](https://github.com/farhanroy)
+## 👤 Contact me
+
+Farhan Roy 
+  - Facebook: [farhansekargadung](https://web.facebook.com/farhansekargadung)
+  - Github: [@farhan-roy](https://github.com/farhanroy)
