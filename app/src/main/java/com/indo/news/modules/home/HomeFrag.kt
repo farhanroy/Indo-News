@@ -4,21 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.lifecycle.lifecycleScope
 import com.indo.news.R
-import com.indo.news.data.model.News
 import com.indo.news.databinding.FragHomeBinding
 import com.indo.news.modules.home.adapter.HomeAdapter
+import com.indo.news.modules.home.adapter.ItemLoadMoreAdapter
 import com.indo.news.modules.home.viewmodel.HomeVM
-import com.indo.news.utils.Result
-import com.indo.news.utils.constant.Constants
 import com.indo.news.utils.extension.setFragBinding
 import dagger.android.support.DaggerFragment
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class HomeFrag : DaggerFragment() {
@@ -31,6 +30,8 @@ class HomeFrag : DaggerFragment() {
     private lateinit var binding: FragHomeBinding
     private lateinit var homeAdapter: HomeAdapter
 
+    private var job: Job? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,42 +42,42 @@ class HomeFrag : DaggerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initLiveData()
+        setHomeAdapter()
+        setHomeNews()
         setSwipeRefresh()
     }
 
-    private fun initLiveData() {
-        viewModel.getHomeNews.observe(viewLifecycleOwner, Observer { result ->
-            when(result){
-                is Result.Success -> {
-                    setHomeAdapter(result.data)
-                    binding.isLoading = false
-                }
-                is Result.InProgress -> binding.isLoading = true
-                is Error -> {
-                    binding.isLoading = false
-                }
+    override fun onDestroy() {
+        super.onDestroy()
+        job?.cancel()
+    }
+
+    private fun setHomeNews() {
+        job?.cancel()
+        job = lifecycleScope.launch {
+//            viewModel.getHomeNews().collectLatest {
+//                homeAdapter.submitData(it)
+//            }
+            viewModel.getHomeNews().collect {
+                homeAdapter.submitData(it)
             }
-        })
+        }
+    }
+
+    private fun setHomeAdapter() {
+        homeAdapter = HomeAdapter()
+        binding.rv.adapter = homeAdapter.withLoadStateHeaderAndFooter(
+            header = ItemLoadMoreAdapter { homeAdapter.retry() },
+            footer = ItemLoadMoreAdapter { homeAdapter.retry() }
+        )
     }
 
     private fun setSwipeRefresh() {
         val swipeRefresh = binding.swipeRefresh
         swipeRefresh.setOnRefreshListener {
             swipeRefresh.isRefreshing = true
-            initLiveData()
+            setHomeNews()
             swipeRefresh.isRefreshing = false
-        }
-    }
-
-    private fun setHomeAdapter(news: News) {
-        homeAdapter = HomeAdapter(requireContext(),news){
-            val action = HomeFragDirections.actionHomeFragToDetailFrag(it)
-            findNavController().navigate(action)
-        }
-        with(binding.rv) {
-            adapter = homeAdapter
-            layoutManager = LinearLayoutManager(context)
         }
     }
 

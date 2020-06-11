@@ -3,6 +3,7 @@ package com.indo.news.di.component
 import android.app.Application
 import com.indo.news.App
 import com.indo.news.di.module.ActivityModule
+import com.indo.news.di.module.AppModule
 import com.indo.news.di.module.NetworkModule
 import com.indo.news.di.module.ViewModelModule
 import dagger.BindsInstance
@@ -12,7 +13,7 @@ import dagger.android.AndroidInjector
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AndroidInjectionModule::class, ActivityModule::class, NetworkModule::class, ViewModelModule::class])
+@Component(modules = [AndroidInjectionModule::class, ActivityModule::class, AppModule::class])
 interface AppComponent : AndroidInjector<App> {
     @Component.Builder
     interface Builder {

@@ -35,6 +35,12 @@ fun <T : ViewDataBinding?> View.setLayoutBinding(layoutId: Int, container: ViewG
         layoutId, container, false)
 }
 
+fun toVisibility(constraint: Boolean): Int = if (constraint) {
+    View.VISIBLE
+} else {
+    View.GONE
+}
+
 fun AppCompatActivity.context(): Context {
     return this
 }

@@ -8,5 +8,7 @@ class Constants {
         const val API_KEY = BuildConfig.API_KEY
         const val CACHE_SIZE: Long = 5 * 1024 * 1024
         const val TO_DETAIL = "to_detail"
+        const val PAGE_SIZE = 20
+        const val PAGE_KEY = 1
     }
 }

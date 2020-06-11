@@ -2,7 +2,7 @@ package com.indo.news.modules.business.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.indo.news.data.source.NewsRepository
+import com.indo.news.data.source.remote.NewsRepository
 import com.indo.news.utils.Result
 import javax.inject.Inject
 
