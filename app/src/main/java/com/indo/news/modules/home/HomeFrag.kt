@@ -55,10 +55,7 @@ class HomeFrag : DaggerFragment() {
     private fun setHomeNews() {
         job?.cancel()
         job = lifecycleScope.launch {
-//            viewModel.getHomeNews().collectLatest {
-//                homeAdapter.submitData(it)
-//            }
-            viewModel.getHomeNews().collect {
+            viewModel.getHomeNews().collectLatest {
                 homeAdapter.submitData(it)
             }
         }

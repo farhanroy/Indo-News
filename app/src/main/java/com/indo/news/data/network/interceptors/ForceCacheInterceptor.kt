@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import android.os.Build
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response
@@ -28,11 +29,17 @@ class ForceCacheInterceptor(
         ) as ConnectivityManager
         var res = false
         connectivityManager.let {
-            it.getNetworkCapabilities(connectivityManager.activeNetwork)?.apply {
-                res = when {
-                    hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
-                    hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
-                    else -> false
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                it.getNetworkCapabilities(connectivityManager.activeNetwork)?.apply {
+                    res = when {
+                        hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+                        hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+                        else -> false
+                    }
+                }
+            } else {
+                it.activeNetworkInfo?.let { networkInfo ->
+                    res = networkInfo.isConnected
                 }
             }
         }
