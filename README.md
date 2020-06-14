@@ -32,8 +32,8 @@ Aplikasi pusat berita indonesia terlengkap akurat dan terpercaya, dari berita tr
 </p>
 
 ### List Libraries Used in this Project
-* [Coroutine] (https://github.com/Kotlin/kotlinx.coroutines)
-* [Dagger 2] (https://dagger.dev/)
+* [Coroutine](https://github.com/Kotlin/kotlinx.coroutines)
+* [Dagger 2](https://dagger.dev/)
 * [Paging 3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
 * [OkHttp](https://square.github.io/okhttp/)
 * [Lottie](https://github.com/airbnb/lottie-android)
@@ -42,7 +42,7 @@ Aplikasi pusat berita indonesia terlengkap akurat dan terpercaya, dari berita tr
 * [SDP](https://github.com/intuit/sdp)
 * [SSP](https://github.com/intuit/ssp)
 
-## 👤 Contact me
+## 👤  Contact me
 
 Farhan Roy 
   - Facebook: [farhansekargadung](https://web.facebook.com/farhansekargadung)
