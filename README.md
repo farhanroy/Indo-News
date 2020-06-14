@@ -1,7 +1,13 @@
 # Aplikasi Indo News
 Aplikasi pusat berita indonesia terlengkap akurat dan terpercaya, dari berita trending, entertain, olahraga, ataupun bisnis semua ada di aplikasi ini
 
-## Screenshot
+* Version 1.0.0
+* Android Target SDK Version 29
+* Built with Kotlin 1.3.72
+* Using MVVM pattern
+* Fully using Android Jetpack Component
+
+### Screenshot
 <p>
   <tr>
   <td>
@@ -24,6 +30,17 @@ Aplikasi pusat berita indonesia terlengkap akurat dan terpercaya, dari berita tr
   </td>
 </tr>
 </p>
+
+### List Libraries Used in this Project
+* [Coroutine] (https://github.com/Kotlin/kotlinx.coroutines)
+* [Dagger 2] (https://dagger.dev/)
+* [Paging 3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
+* [OkHttp](https://square.github.io/okhttp/)
+* [Lottie](https://github.com/airbnb/lottie-android)
+* [Glide](https://github.com/bumptech/glide)
+* [Retrofit](https://github.com/square/retrofit)
+* [SDP](https://github.com/intuit/sdp)
+* [SSP](https://github.com/intuit/ssp)
 
 ## 👤 Contact me
 
