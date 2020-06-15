@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.paging.LoadState
 import com.indo.news.R
 import com.indo.news.databinding.FragHomeBinding
 import com.indo.news.modules.home.adapter.HomeAdapter
@@ -15,7 +16,6 @@ import com.indo.news.modules.home.viewmodel.HomeVM
 import com.indo.news.utils.extension.setFragBinding
 import dagger.android.support.DaggerFragment
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -28,7 +28,7 @@ class HomeFrag : DaggerFragment() {
         viewModelFactory
     }
     private lateinit var binding: FragHomeBinding
-    private lateinit var homeAdapter: HomeAdapter
+    private val homeAdapter = HomeAdapter()
 
     private var job: Job? = null
 
@@ -62,11 +62,17 @@ class HomeFrag : DaggerFragment() {
     }
 
     private fun setHomeAdapter() {
-        homeAdapter = HomeAdapter()
         binding.rv.adapter = homeAdapter.withLoadStateHeaderAndFooter(
             header = ItemLoadMoreAdapter { homeAdapter.retry() },
             footer = ItemLoadMoreAdapter { homeAdapter.retry() }
         )
+        homeAdapter.addLoadStateListener { loadState ->
+            if (loadState.refresh !is LoadState.NotLoading) {
+                binding.isLoading = true
+            } else {
+                binding.isLoading = false
+            }
+        }
     }
 
     private fun setSwipeRefresh() {
