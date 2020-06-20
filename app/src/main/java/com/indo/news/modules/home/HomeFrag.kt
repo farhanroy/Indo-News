@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import com.indo.news.R
@@ -14,19 +14,15 @@ import com.indo.news.modules.home.adapter.HomeAdapter
 import com.indo.news.modules.home.adapter.ItemLoadMoreAdapter
 import com.indo.news.modules.home.viewmodel.HomeVM
 import com.indo.news.utils.extension.setFragBinding
-import dagger.android.support.DaggerFragment
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-class HomeFrag : DaggerFragment() {
+@AndroidEntryPoint
+class HomeFrag : Fragment() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-    private val viewModel: HomeVM by viewModels {
-        viewModelFactory
-    }
+    private val viewModel: HomeVM by viewModels()
     private lateinit var binding: FragHomeBinding
     private val homeAdapter = HomeAdapter()
 
@@ -67,11 +63,7 @@ class HomeFrag : DaggerFragment() {
             footer = ItemLoadMoreAdapter { homeAdapter.retry() }
         )
         homeAdapter.addLoadStateListener { loadState ->
-            if (loadState.refresh !is LoadState.NotLoading) {
-                binding.isLoading = true
-            } else {
-                binding.isLoading = false
-            }
+            binding.isLoading = loadState.refresh !is LoadState.NotLoading
         }
     }
 

@@ -6,14 +6,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.indo.news.R
 import com.indo.news.databinding.FragDetailBinding
 import com.indo.news.utils.extension.TimeAgo
 import com.indo.news.utils.extension.setFragBinding
-import dagger.android.support.DaggerFragment
+import dagger.hilt.android.AndroidEntryPoint
 
-class DetailFrag : DaggerFragment() {
+@AndroidEntryPoint
+class DetailFrag : Fragment() {
 
     private lateinit var binding: FragDetailBinding
     private val args: DetailFragArgs by navArgs()

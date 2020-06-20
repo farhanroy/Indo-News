@@ -1,4 +1,4 @@
-package com.indo.news.di.module
+package com.indo.news.di
 
 import android.app.Application
 import com.indo.news.data.network.NewsService
@@ -8,6 +8,8 @@ import com.indo.news.data.network.interceptors.ForceCacheInterceptor
 import com.indo.news.utils.constant.Constants
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -16,6 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
+@InstallIn(ApplicationComponent::class)
 @Module
 class NetworkModule {
 

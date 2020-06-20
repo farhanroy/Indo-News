@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs"
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdkVersion 29
@@ -85,12 +86,11 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$okhttp"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp"
 
-    // Dagger
-    implementation "com.google.dagger:dagger:$dagger"
-    implementation "com.google.dagger:dagger-android:$dagger"
-    implementation "com.google.dagger:dagger-android-support:$dagger"
-    kapt "com.google.dagger:dagger-android-processor:$dagger"
-    kapt "com.google.dagger:dagger-compiler:$dagger"
+    // Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltViewModel"
+    kapt "androidx.hilt:hilt-compiler:$hiltViewModel"
 
     // sdp & ssp
     implementation "com.intuit.ssp:ssp-android:$sdpssp"

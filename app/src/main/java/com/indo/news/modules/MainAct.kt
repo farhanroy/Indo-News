@@ -2,14 +2,16 @@ package com.indo.news.modules
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
 import com.indo.news.R
 import com.indo.news.databinding.ActMainBinding
 import com.indo.news.utils.extension.setActBinding
-import dagger.android.support.DaggerAppCompatActivity
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainAct : DaggerAppCompatActivity() {
+@AndroidEntryPoint
+class MainAct : AppCompatActivity() {
 
     private lateinit var binding: ActMainBinding
 

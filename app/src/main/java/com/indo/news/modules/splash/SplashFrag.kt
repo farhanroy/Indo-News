@@ -4,16 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.indo.news.R
 import com.indo.news.databinding.FragSplashBinding
 import com.indo.news.utils.extension.setFragBinding
-import dagger.android.support.DaggerFragment
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class SplashFrag : DaggerFragment() {
+@AndroidEntryPoint
+class SplashFrag : Fragment() {
 
     private lateinit var binding: FragSplashBinding
 

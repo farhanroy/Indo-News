@@ -1,5 +1,8 @@
 package com.indo.news.modules.home.viewmodel
 
+import androidx.hilt.Assisted
+import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
@@ -7,10 +10,10 @@ import androidx.paging.cachedIn
 import com.indo.news.data.model.Article
 import com.indo.news.data.source.remote.NewsRepository
 import kotlinx.coroutines.flow.Flow
-import javax.inject.Inject
 
-class HomeVM @Inject constructor(
-    private val repository: NewsRepository
+class HomeVM @ViewModelInject constructor(
+    private val repository: NewsRepository,
+    @Assisted private val savedStateHandle: SavedStateHandle
 ): ViewModel() {
 
     private var currentArticleResult: Flow<PagingData<Article>>? = null

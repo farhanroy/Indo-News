@@ -4,10 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.indo.news.R
@@ -16,18 +15,13 @@ import com.indo.news.databinding.FragBusinessBinding
 import com.indo.news.modules.business.adapter.BusinessAdapter
 import com.indo.news.modules.business.viewmodel.BusinessVM
 import com.indo.news.utils.Result
-import com.indo.news.utils.constant.Constants
 import com.indo.news.utils.extension.setFragBinding
-import dagger.android.support.DaggerFragment
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
-class BusinessFrag : DaggerFragment() {
+@AndroidEntryPoint
+class BusinessFrag : Fragment() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-    private val viewModel: BusinessVM by viewModels {
-        viewModelFactory
-    }
+    private val viewModel: BusinessVM by viewModels()
     private lateinit var binding: FragBusinessBinding
     private lateinit var businessAdapter: BusinessAdapter
 

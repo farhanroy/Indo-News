@@ -4,10 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.indo.news.R
@@ -16,19 +15,13 @@ import com.indo.news.databinding.FragEntertainmentBinding
 import com.indo.news.modules.entertainment.adapter.EntertainmentAdapter
 import com.indo.news.modules.entertainment.viewmodel.EntertainmentVM
 import com.indo.news.utils.Result
-import com.indo.news.utils.constant.Constants
 import com.indo.news.utils.extension.setFragBinding
-import dagger.android.support.DaggerFragment
-import java.lang.Error
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
-class EntertainmentFrag : DaggerFragment() {
+@AndroidEntryPoint
+class EntertainmentFrag : Fragment() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-    private val viewModel: EntertainmentVM by viewModels {
-        viewModelFactory
-    }
+    private val viewModel: EntertainmentVM by viewModels()
     private lateinit var binding: FragEntertainmentBinding
     private lateinit var entertainmentAdapter: EntertainmentAdapter
 

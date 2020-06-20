@@ -1,10 +1,8 @@
 package com.indo.news
 
-import com.indo.news.di.component.DaggerAppComponent
-import dagger.android.AndroidInjector
-import dagger.android.DaggerApplication
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-class App : DaggerApplication() {
-    private val applicationInjector = DaggerAppComponent.builder().application(this).build()
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> = applicationInjector
-}
+
+@HiltAndroidApp
+class App : Application()
