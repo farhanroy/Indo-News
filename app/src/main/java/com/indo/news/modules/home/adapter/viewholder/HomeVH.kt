@@ -51,10 +51,20 @@ class HomeVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 
     companion object {
-        fun create(parent: ViewGroup): HomeVH {
-            val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_news1, parent, false)
-            return HomeVH(view)
+
+        const val NEWS_ITEM1 = 1
+        const val NEWS_ITEM2 = 2
+
+        fun create(parent: ViewGroup, viewType: Int): HomeVH {
+            return if (viewType == NEWS_ITEM1) {
+                val view = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.item_news1, parent, false)
+                HomeVH(view)
+            } else {
+                val view = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.item_news2, parent, false)
+                HomeVH(view)
+            }
         }
     }
 }
