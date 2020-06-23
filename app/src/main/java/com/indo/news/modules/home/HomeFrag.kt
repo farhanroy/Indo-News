@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -63,7 +64,9 @@ class HomeFrag : Fragment() {
             footer = ItemLoadMoreAdapter { homeAdapter.retry() }
         )
         homeAdapter.addLoadStateListener { loadState ->
-            binding.isLoading = loadState.refresh !is LoadState.NotLoading
+            binding.rv.isVisible = loadState.refresh is LoadState.NotLoading
+            binding.loadingLayout.loading.isVisible = loadState.refresh is LoadState.Loading
+            binding.errorLayout.error.isVisible = loadState.refresh is LoadState.Error
         }
     }
 

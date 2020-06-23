@@ -13,26 +13,27 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import com.indo.news.BuildConfig
 
-fun debug(message: String){
+fun debug(message: String) {
     if (BuildConfig.DEBUG) Log.d("Result", message)
 }
 
-fun Activity.toast(message: String){
+fun Activity.toast(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
 
-fun <T: ViewDataBinding?> AppCompatActivity.setActBinding(layoutId: Int) : T {
+fun <T : ViewDataBinding?> AppCompatActivity.setActBinding(layoutId: Int): T {
     return DataBindingUtil.setContentView<T>(this, layoutId)
 }
 
-fun <T : ViewDataBinding?> Fragment.setFragBinding(layoutId: Int, container: ViewGroup?): T{
+fun <T : ViewDataBinding?> Fragment.setFragBinding(layoutId: Int, container: ViewGroup?): T {
     return DataBindingUtil.inflate<T>(layoutInflater, layoutId, container, false)
 }
 
-fun <T : ViewDataBinding?> View.setLayoutBinding(layoutId: Int, container: ViewGroup?): T{
+fun <T : ViewDataBinding?> View.setLayoutBinding(layoutId: Int, container: ViewGroup?): T {
     return DataBindingUtil.inflate<T>(
         LayoutInflater.from(context),
-        layoutId, container, false)
+        layoutId, container, false
+    )
 }
 
 fun toVisibility(constraint: Boolean): Int = if (constraint) {
@@ -45,4 +46,4 @@ fun AppCompatActivity.context(): Context {
     return this
 }
 
-fun Any?.isNull() : Boolean = this == null
+fun Any?.isNull(): Boolean = this == null

@@ -10,4 +10,7 @@
     <string name="vertical_line">|</string>
     <string name="see_more">See More</string>
     <string name="retry">Retry</string>
+    <string name="whops">Whoops!</string>
+    <string name="error">Sorry! Something went wrong</string>
+    <string name="try_again">Try Again</string>
 </resources>
