@@ -9,8 +9,8 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.indo.news.R
-import com.indo.news.data.model.Article
 import com.indo.news.data.model.News
+import com.indo.news.services.db.entity.Article
 import com.indo.news.utils.extension.TimeAgo
 
 class EntertainmentAdapter(

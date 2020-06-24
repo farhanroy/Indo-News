@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.indo.news.data.model.Article
 import com.indo.news.data.source.remote.NewsRepository
+import com.indo.news.services.db.entity.Article
 import kotlinx.coroutines.flow.Flow
 
 class HomeVM @ViewModelInject constructor(

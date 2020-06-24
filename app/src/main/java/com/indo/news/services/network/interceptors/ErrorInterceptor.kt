@@ -1,4 +1,4 @@
-package com.indo.news.data.network.interceptors
+package com.indo.news.services.network.interceptors
 
 import okhttp3.Interceptor
 import okhttp3.Request

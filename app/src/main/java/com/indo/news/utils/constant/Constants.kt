@@ -10,5 +10,7 @@ class Constants {
         const val TO_DETAIL = "to_detail"
         const val PAGE_SIZE = 20
         const val PAGE_KEY = 1
+        const val DB_VERSION = 1
+        const val DB_NAME = "app.db"
     }
 }

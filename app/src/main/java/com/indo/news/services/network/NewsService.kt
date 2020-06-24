@@ -1,4 +1,4 @@
-package com.indo.news.data.network
+package com.indo.news.services.network
 
 import com.indo.news.data.model.News
 import com.indo.news.utils.constant.Constants

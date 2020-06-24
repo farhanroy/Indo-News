@@ -1,10 +1,10 @@
 package com.indo.news.di
 
 import android.app.Application
-import com.indo.news.data.network.NewsService
-import com.indo.news.data.network.interceptors.CacheInterceptor
-import com.indo.news.data.network.interceptors.ErrorInterceptor
-import com.indo.news.data.network.interceptors.ForceCacheInterceptor
+import com.indo.news.services.network.NewsService
+import com.indo.news.services.network.interceptors.CacheInterceptor
+import com.indo.news.services.network.interceptors.ErrorInterceptor
+import com.indo.news.services.network.interceptors.ForceCacheInterceptor
 import com.indo.news.utils.constant.Constants
 import dagger.Module
 import dagger.Provides
@@ -20,7 +20,7 @@ import javax.inject.Singleton
 
 @InstallIn(ApplicationComponent::class)
 @Module
-class NetworkModule {
+object NetworkModule {
 
     @Singleton
     @Provides
