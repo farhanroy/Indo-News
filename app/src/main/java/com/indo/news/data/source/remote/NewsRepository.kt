@@ -16,17 +16,10 @@ import javax.inject.Singleton
 class NewsRepository @Inject constructor(
     private val service: NewsService
 ) {
-    fun getHomeNews(): Flow<PagingData<Article>> {
+    fun getNewsByCategory(category: String): Flow<PagingData<Article>> {
         return Pager(
             config = PagingConfig(pageSize = Constants.PAGE_SIZE),
-            pagingSourceFactory = { NewsDataSource(service) }
+            pagingSourceFactory = { NewsDataSource(service, category) }
         ).flow
     }
-
-
-    suspend fun getEntertainmentNews(): News = service.getEntertainmentNews(Constants.API_KEY)
-
-    suspend fun getBusinessNews(): News = service.getBusinessNews(Constants.API_KEY)
-
-    suspend fun getSportNews(): News = service.getSportNews(Constants.API_KEY)
 }

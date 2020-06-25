@@ -13,6 +13,6 @@ data class News (
 
 @Parcelize
 data class Source (
-    @SerializedName("id") val id: String,
+    @SerializedName("id") val sourceId: String,
     @SerializedName("name") val name: String
 ): Parcelable

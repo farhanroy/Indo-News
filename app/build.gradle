@@ -76,6 +76,9 @@ dependencies {
     // Material Design
     implementation "com.google.android.material:material:$material"
 
+    // Viewpager
+    implementation "androidx.viewpager2:viewpager2:$viewPager"
+
     // Room
     implementation "androidx.room:room-runtime:$room"
     implementation "androidx.room:room-ktx:$room"

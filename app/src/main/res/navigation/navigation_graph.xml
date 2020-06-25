@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/entertainmentFrag"
-        android:name="com.indo.news.modules.entertainment.EntertainmentFrag"
+        android:name="com.indo.news.modules.home.page.EntertainmentFrag"
         android:label="HeadlineFrag">
         <action
             android:id="@+id/action_entertainmentFrag_to_detailFrag"
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/businessFrag"
-        android:name="com.indo.news.modules.business.BusinessFrag"
+        android:name="com.indo.news.modules.home.page.BusinessPage"
         android:label="frag_politic"
         tools:layout="@layout/frag_business">
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/sportFrag"
-        android:name="com.indo.news.modules.sport.SportFrag"
+        android:name="com.indo.news.modules.home.page.SportFrag"
         android:label="frag_sport"
         tools:layout="@layout/frag_sport">
         <action

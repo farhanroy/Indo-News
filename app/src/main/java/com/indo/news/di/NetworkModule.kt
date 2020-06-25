@@ -1,6 +1,7 @@
 package com.indo.news.di
 
 import android.app.Application
+import android.content.Context
 import com.indo.news.services.network.NewsService
 import com.indo.news.services.network.interceptors.CacheInterceptor
 import com.indo.news.services.network.interceptors.ErrorInterceptor
@@ -10,6 +11,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.android.qualifiers.ApplicationContext
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -24,9 +26,9 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideOkHttp(application: Application): OkHttpClient {
+    fun provideOkHttp(@ApplicationContext appContext: Context): OkHttpClient {
         val builder = OkHttpClient().newBuilder()
-            .cache(Cache(application.cacheDir, Constants.CACHE_SIZE))
+            .cache(Cache(appContext.cacheDir, Constants.CACHE_SIZE))
             .connectTimeout(10, TimeUnit.SECONDS)
             .writeTimeout(10, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
@@ -34,7 +36,7 @@ object NetworkModule {
                 .setLevel(HttpLoggingInterceptor.Level.BASIC))
             .addInterceptor(ErrorInterceptor())
             .addNetworkInterceptor(CacheInterceptor())
-            .addInterceptor(ForceCacheInterceptor(application))
+            .addInterceptor(ForceCacheInterceptor(appContext))
         return builder.build()
     }
 

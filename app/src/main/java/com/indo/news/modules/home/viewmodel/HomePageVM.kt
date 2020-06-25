@@ -11,17 +11,18 @@ import com.indo.news.data.source.remote.NewsRepository
 import com.indo.news.services.db.entity.Article
 import kotlinx.coroutines.flow.Flow
 
-class HomeVM @ViewModelInject constructor(
+class HomePageVM @ViewModelInject constructor(
     private val repository: NewsRepository,
     @Assisted private val savedStateHandle: SavedStateHandle
 ): ViewModel() {
 
     private var currentArticleResult: Flow<PagingData<Article>>? = null
 
-    fun getHomeNews(): Flow<PagingData<Article>> {
+    fun getNewsByCategory(category: String): Flow<PagingData<Article>> {
         val lastResult = currentArticleResult
         if (lastResult != null) return lastResult
-        val result: Flow<PagingData<Article>> = repository.getHomeNews().cachedIn(viewModelScope)
+        val result: Flow<PagingData<Article>> =
+            repository.getNewsByCategory(category).cachedIn(viewModelScope)
         currentArticleResult = result
         return result
     }

@@ -1,6 +1,5 @@
 package com.indo.news.services.network.interceptors
 
-import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
@@ -10,7 +9,7 @@ import okhttp3.Request
 import okhttp3.Response
 
 class ForceCacheInterceptor(
-    private var application: Application
+    private var application: Context
 ) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val builder: Request.Builder = chain.request().newBuilder()

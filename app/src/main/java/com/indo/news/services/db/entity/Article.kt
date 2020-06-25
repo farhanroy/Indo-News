@@ -1,6 +1,7 @@
 package com.indo.news.services.db.entity
 
 import android.os.Parcelable
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
@@ -11,6 +12,7 @@ import kotlinx.android.parcel.Parcelize
 @Entity(tableName = "article_table")
 data class Article (
     @PrimaryKey(autoGenerate = true) var id: Long = 0,
+    @Embedded
     @field:SerializedName("source") val source: Source,
     @field:SerializedName("author") val author: String? = null,
     @field:SerializedName("title") val title: String,
