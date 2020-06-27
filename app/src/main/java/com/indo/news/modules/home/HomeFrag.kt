@@ -5,18 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import com.google.android.material.tabs.TabLayoutMediator
 import com.indo.news.R
 import com.indo.news.databinding.FragHomeBinding
-import com.indo.news.modules.home.viewmodel.HomePageVM
+import com.indo.news.modules.home.adapter.viewpager.HomeVP
 import com.indo.news.utils.extension.setFragBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFrag : Fragment() {
 
-    private val viewModel: HomePageVM by viewModels()
     private lateinit var binding: FragHomeBinding
+    private val newsCategory = resources.getStringArray(R.array.news_category)
+    private val homeViewPager by lazy {
+        HomeVP(requireActivity(), newsCategory)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,7 +31,17 @@ class HomeFrag : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViewPager()
     }
 
+    private fun initViewPager() {
+        val viewPager = binding.pager
+        val tabLayout = binding.tabLayout
 
+        viewPager.adapter = homeViewPager
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = newsCategory[position]
+        }.attach()
+
+    }
 }

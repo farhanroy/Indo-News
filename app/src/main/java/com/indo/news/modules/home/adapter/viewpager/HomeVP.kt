@@ -5,24 +5,24 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.indo.news.modules.home.page.HomePage
 
-class HomeVP(fm: FragmentActivity, item: Int): FragmentStateAdapter(fm){
-    override fun getItemCount(): Int  = 3
+class HomeVP(fm: FragmentActivity, private val newsCategory: Array<String>) :
+    FragmentStateAdapter(fm) {
+    override fun getItemCount(): Int = newsCategory.size
 
     override fun createFragment(position: Int): Fragment {
-        return when(position) {
+        return when (position) {
             0 -> {
-                HomePage.newInstance()
+                HomePage.newInstance(newsCategory[position])
             }
             1 -> {
-                HomePage.newInstance()
+                HomePage.newInstance(newsCategory[position])
             }
             2 -> {
-                HomePage.newInstance()
+                HomePage.newInstance(newsCategory[position])
             }
             else -> {
-                HomePage.newInstance()
+                HomePage.newInstance(newsCategory[0])
             }
         }
     }
-
 }
