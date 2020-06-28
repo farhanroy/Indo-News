@@ -4,16 +4,5 @@
         android:title="@string/home"
         android:orderInCategory="1"
         android:icon="@drawable/ic_home"/>
-    <item android:id="@+id/entertainmentFrag"
-        android:title="@string/entertainment"
-        android:orderInCategory="1"
-        android:icon="@drawable/ic_entertainment"/>
-    <item android:id="@+id/businessFrag"
-        android:title="@string/business"
-        android:orderInCategory="1"
-        android:icon="@drawable/ic_business"/>
-    <item android:id="@+id/sportFrag"
-        android:title="@string/sport"
-        android:orderInCategory="1"
-        android:icon="@drawable/ic_sport"/>
+
 </menu>

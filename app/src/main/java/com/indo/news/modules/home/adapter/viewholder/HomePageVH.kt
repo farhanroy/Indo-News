@@ -14,7 +14,7 @@ import com.indo.news.services.db.entity.Article
 import com.indo.news.utils.extension.TimeAgo
 import com.indo.news.utils.extension.isNull
 
-class HomeVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class HomePageVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val tvTitle = itemView.findViewById<TextView>(R.id.tv_title)
     private val tvSource = itemView.findViewById<TextView>(R.id.tv_source)
     private val tvTime = itemView.findViewById<TextView>(R.id.tv_time)
@@ -55,15 +55,15 @@ class HomeVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         const val NEWS_ITEM1 = 1
         const val NEWS_ITEM2 = 2
 
-        fun create(parent: ViewGroup, viewType: Int): HomeVH {
+        fun create(parent: ViewGroup, viewType: Int): HomePageVH {
             return if (viewType == NEWS_ITEM1) {
                 val view = LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_news1, parent, false)
-                HomeVH(view)
+                HomePageVH(view)
             } else {
                 val view = LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_news2, parent, false)
-                HomeVH(view)
+                HomePageVH(view)
             }
         }
     }

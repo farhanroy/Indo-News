@@ -16,7 +16,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeFrag : Fragment() {
 
     private lateinit var binding: FragHomeBinding
-    private val newsCategory = resources.getStringArray(R.array.news_category)
+    private lateinit var newsCategory: Array<String>
     private val homeViewPager by lazy {
         HomeVP(requireActivity(), newsCategory)
     }
@@ -26,6 +26,7 @@ class HomeFrag : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = setFragBinding(R.layout.frag_home, container)
+        newsCategory =  resources.getStringArray(R.array.news_category)
         return binding.root
     }
 

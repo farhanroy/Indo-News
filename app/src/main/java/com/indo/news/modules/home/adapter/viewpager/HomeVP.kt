@@ -12,7 +12,7 @@ class HomeVP(fm: FragmentActivity, private val newsCategory: Array<String>) :
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> {
-                HomePage.newInstance(newsCategory[position])
+                HomePage.newInstance("")
             }
             1 -> {
                 HomePage.newInstance(newsCategory[position])
@@ -20,8 +20,11 @@ class HomeVP(fm: FragmentActivity, private val newsCategory: Array<String>) :
             2 -> {
                 HomePage.newInstance(newsCategory[position])
             }
+            3 -> {
+                HomePage.newInstance(newsCategory[position])
+            }
             else -> {
-                HomePage.newInstance(newsCategory[0])
+                HomePage.newInstance("")
             }
         }
     }
