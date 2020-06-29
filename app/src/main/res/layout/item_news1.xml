@@ -51,11 +51,16 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_news"
+        <androidx.cardview.widget.CardView
             android:layout_width="@dimen/news_image_width"
             android:layout_height="@dimen/news_image_height"
             android:layout_weight="2"
-            android:scaleType="centerCrop" />
+            app:cardCornerRadius="@dimen/margin_content_small">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_news"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

@@ -31,6 +31,7 @@ class SplashFrag : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewLifecycleOwner.lifecycleScope.launch {
             delay(2000)
+
             val action = SplashFragDirections.actionSplashFragToHomeFrag()
             findNavController().navigate(action)
         }

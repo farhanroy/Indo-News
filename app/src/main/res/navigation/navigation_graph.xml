@@ -20,7 +20,7 @@
         android:label="frag_home"
         tools:layout="@layout/frag_home">
         <action
-            android:id="@+id/action_homeFrag_to_detailFrag"
+            android:id="@+id/action_homeFrag_to_detailFrag2"
             app:destination="@id/detailFrag" />
     </fragment>
     <fragment
@@ -31,5 +31,8 @@
         <argument
             android:name="news"
             app:argType="com.indo.news.services.db.entity.Article" />
+        <action
+            android:id="@+id/action_detailFrag_to_homeFrag"
+            app:destination="@id/homeFrag" />
     </fragment>
 </navigation>

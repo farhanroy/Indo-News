@@ -9,4 +9,8 @@
         <item name="fontFamily">@font/lato_regular</item>
     </style>
 
+    <style name="TabTheme" parent="Widget.MaterialComponents.TabLayout">
+        <item name="android:textSize">@dimen/font_normal</item>
+        <item name="fontFamily">sans-serif</item>
+    </style>
 </resources>

@@ -17,9 +17,7 @@ class HomeFrag : Fragment() {
 
     private lateinit var binding: FragHomeBinding
     private lateinit var newsCategory: Array<String>
-    private val homeViewPager by lazy {
-        HomeVP(requireActivity(), newsCategory)
-    }
+    private lateinit var homeViewPager: HomeVP
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +37,7 @@ class HomeFrag : Fragment() {
         val viewPager = binding.pager
         val tabLayout = binding.tabLayout
 
+        homeViewPager = HomeVP(requireActivity(), newsCategory)
         viewPager.adapter = homeViewPager
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = newsCategory[position]

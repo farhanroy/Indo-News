@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
-import androidx.navigation.findNavController
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.indo.news.R
@@ -44,8 +44,8 @@ class HomePageVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private fun toDetail() {
         itemView.setOnClickListener {
             article?.let { article ->
-                val action = HomeFragDirections.actionHomeFragToDetailFrag(article)
-                it.findNavController().navigate(action)
+                val action = HomeFragDirections.actionHomeFragToDetailFrag2(article)
+                findNavController(it).navigate(action)
             }
         }
     }
