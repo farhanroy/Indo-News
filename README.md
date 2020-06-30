@@ -33,7 +33,7 @@ Aplikasi pusat berita indonesia terlengkap akurat dan terpercaya, dari berita tr
 
 ### List Libraries Used in this Project
 * [Coroutine](https://github.com/Kotlin/kotlinx.coroutines)
-* [Dagger 2](https://dagger.dev/)
+* [Hilt DI](https://dagger.dev/)
 * [Paging 3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
 * [OkHttp](https://square.github.io/okhttp/)
 * [Lottie](https://github.com/airbnb/lottie-android)
