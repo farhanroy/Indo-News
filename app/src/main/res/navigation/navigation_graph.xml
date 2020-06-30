@@ -32,7 +32,21 @@
             android:name="news"
             app:argType="com.indo.news.services.db.entity.Article" />
         <action
-            android:id="@+id/action_detailFrag_to_homeFrag"
-            app:destination="@id/homeFrag" />
+            android:id="@+id/action_detailFrag_to_moreFrag"
+            app:destination="@id/moreFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFrag"
+        android:name="com.indo.news.modules.favorite.FavoriteFrag"
+        android:label="frag_favorite"
+        tools:layout="@layout/frag_favorite" />
+    <fragment
+        android:id="@+id/moreFrag"
+        android:name="com.indo.news.modules.more.MoreFrag"
+        android:label="frag_more"
+        tools:layout="@layout/frag_more" >
+        <argument
+            android:name="url"
+            app:argType="string" />
     </fragment>
 </navigation>

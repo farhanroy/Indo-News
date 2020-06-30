@@ -13,6 +13,7 @@
     <string name="whops">Whoops!</string>
     <string name="error">Sorry! Something went wrong</string>
     <string name="try_again">Try Again</string>
+    <string name="favorite">Favorite</string>
 
     <string-array name="news_category">
         <item>@string/headline</item>

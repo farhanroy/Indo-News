@@ -41,6 +41,7 @@ class HomePage : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
         setHomePageAdapter()
         setNews()
         setSwipeRefresh()
@@ -49,6 +50,12 @@ class HomePage : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         job?.cancel()
+    }
+
+    private fun initViews() {
+        binding.errorLayout.btnRetry.setOnClickListener {
+            setNews()
+        }
     }
 
     private fun setNews() {

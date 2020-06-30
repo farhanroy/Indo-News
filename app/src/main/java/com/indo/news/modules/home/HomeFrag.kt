@@ -34,7 +34,7 @@ class HomeFrag : Fragment() {
     }
 
     private fun initViewPager() {
-        val viewPager = binding.pager
+        val viewPager = binding.viewPager
         val tabLayout = binding.tabLayout
 
         homeViewPager = HomeVP(requireActivity(), newsCategory)

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
@@ -7,10 +7,16 @@
         <item name="colorSecondary">@color/colorSecondary</item>
 
         <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:statusBarColor">@color/colorSecondary</item>
     </style>
 
     <style name="TabTheme" parent="Widget.MaterialComponents.TabLayout">
         <item name="android:textSize">@dimen/font_normal</item>
         <item name="fontFamily">sans-serif</item>
+        <item name="tabRippleColor">@color/colorPrimary</item>
+        <item name="tabTextAppearance">@style/TextAppearance.MaterialComponents.Subtitle1</item>
+        <item name="tabIndicatorFullWidth">false</item>
+        <item name="tabMode">scrollable</item>
     </style>
 </resources>

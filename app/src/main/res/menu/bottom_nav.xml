@@ -5,4 +5,8 @@
         android:orderInCategory="1"
         android:icon="@drawable/ic_home"/>
 
+    <item android:id="@+id/favoriteFrag"
+        android:title="@string/favorite"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic_favorite"/>
 </menu>
