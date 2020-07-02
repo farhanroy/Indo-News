@@ -5,6 +5,7 @@
     <color name="colorSecondary">#FFFFFF</color>
     <color name="colorBlack">#0F0F0F</color>
     <color name="colorGrey">#5E5E5E</color>
+    <color name="colorLightGrey">#DCDCDC</color>
     <color name="colorGreen">#008B00</color>
     <color name="colorBlue">#017CBF</color>
 </resources>
