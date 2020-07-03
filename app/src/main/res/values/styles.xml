@@ -11,7 +11,7 @@
         <item name="android:statusBarColor">@color/colorSecondary</item>
     </style>
 
-    <style name="TabTheme" parent="Widget.MaterialComponents.TabLayout">
+    <style name="HomeTabTheme" parent="Widget.MaterialComponents.TabLayout">
         <item name="android:textSize">@dimen/font_normal</item>
         <item name="fontFamily">sans-serif</item>
         <item name="tabRippleColor">@color/colorPrimary</item>
@@ -19,4 +19,38 @@
         <item name="tabIndicatorFullWidth">false</item>
         <item name="tabMode">scrollable</item>
     </style>
+
+    <style name="TextAppearanceHeadline1">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/font_superlarge</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearanceHeadline2">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/font_large</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearanceHeadline3">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/font_semilarge</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearanceBody1">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/font_semilarge</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextAppearanceBody2">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/font_normal</item>
+    </style>
+
 </resources>

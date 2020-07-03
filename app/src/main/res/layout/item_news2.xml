@@ -15,11 +15,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:fontFamily="@font/lato_bold"
             android:maxLines="2"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/font_large"
-            android:textStyle="bold"
+            style="@style/TextAppearanceHeadline2"
             tools:text="Real Madrid is the best club in the world, i very like real madrid " />
 
         <androidx.cardview.widget.CardView
@@ -46,8 +43,7 @@
                 android:id="@+id/tv_source"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/lato_light"
-                android:textSize="@dimen/font_normal"
+                style="@style/TextAppearanceBody2"
                 tools:text="BBC News" />
 
             <TextView
@@ -55,8 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_content_medium_small"
-                android:fontFamily="@font/lato_light"
-                android:textSize="@dimen/font_normal"
+                style="@style/TextAppearanceBody2"
                 tools:text="2 days ago" />
         </androidx.appcompat.widget.LinearLayoutCompat>
     </LinearLayout>

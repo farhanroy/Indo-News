@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="time"
+            type="String" />
+
+        <variable
+            name="content"
+            type="String" />
+
+        <variable
+            name="data"
+            type="com.indo.news.services.db.entity.Article" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_content_medium">
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/TextAppearanceHeadline1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:text="@{data.title}"
+                tools:text="Real Madrid is the best club in the world, it have players pro like sergio ramos and kareem benzema" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_content_medium_small"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="19dp">
+
+                <TextView
+                    style="@style/TextAppearanceBody2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.source.name}"
+                    android:textColor="@color/colorGreen"
+                    tools:text="Detik.com" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_content_super_small"
+                    android:layout_marginEnd="@dimen/margin_content_super_small"
+                    android:text="@string/vertical_line" />
+
+                <TextView
+                    style="@style/TextAppearanceBody2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{time}"
+                    tools:text="2 Days Ago" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/TextAppearanceBody1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_content_medium_small"
+                android:text="@{data.description}"
+                tools:text="Berikut daftar 25 smarphone dari berbagai produk yang dilengkapi dengan baterai berdaya 5.000 hingga 6.000 mAh." />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageView2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/image_detail_height"
+                android:layout_marginStart="@dimen/margin_content_small"
+                android:layout_marginTop="@dimen/margin_content_medium_small"
+                android:layout_marginEnd="@dimen/margin_content_small"
+                app:imageUrl="@{data.urlToImage}" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_content_medium_small"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearanceBody1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{content}" />
+
+                <TextView
+                    android:id="@+id/seeMore"
+                    style="@style/TextAppearanceBody1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/see_more"
+                    android:textColor="@color/colorBlue" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

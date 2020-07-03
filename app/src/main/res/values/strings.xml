@@ -14,7 +14,7 @@
     <string name="error">Sorry! Something went wrong</string>
     <string name="try_again">Try Again</string>
     <string name="favorite">Favorite</string>
-    <string name="recommend_article">Rekomendasi Artikel</string>
+    <string name="recommend_article">Recommend Article</string>
 
     <string-array name="news_category">
         <item>@string/headline</item>

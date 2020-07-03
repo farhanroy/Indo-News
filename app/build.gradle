@@ -61,6 +61,8 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine"
 
+    implementation "com.google.android.play:core:1.7.3"
+
     // Android
     implementation "androidx.core:core-ktx:$ktx"
     implementation "androidx.appcompat:appcompat:$appcompat"
