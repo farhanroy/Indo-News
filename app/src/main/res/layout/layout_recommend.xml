@@ -9,7 +9,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_content_medium_small">
+        android:padding="@dimen/margin_content_medium_small">
 
         <TextView
             android:id="@+id/textView5"

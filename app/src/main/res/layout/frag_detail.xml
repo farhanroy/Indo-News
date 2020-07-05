@@ -11,7 +11,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include layout="@layout/layout_detail" />
+            <include
+                android:id="@+id/detail"
+                layout="@layout/layout_detail" />
 
             <include
                 layout="@layout/layout_recommend"

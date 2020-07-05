@@ -5,6 +5,10 @@ apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs"
 apply plugin: 'dagger.hilt.android.plugin'
 
+def apiKeyPropertiesFile = rootProject.file("apikey.properties")
+def apiKeyProperties = new Properties()
+apiKeyProperties.load(new FileInputStream(apiKeyPropertiesFile))
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -17,7 +21,7 @@ android {
         versionName "1.0"
 
         buildConfigField("String", "BASE_URL", "\"https://newsapi.org/v2/\"")
-        buildConfigField("String", "API_KEY", "\"a441d239d9c1498497b7393e41d4db38\"")
+        buildConfigField("String", "API_KEY", apiKeyProperties['API_KEY'])
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -48,7 +52,6 @@ android {
         experimental = true
     }
 
-
     compileOptions {
         sourceCompatibility 1.8
         targetCompatibility 1.8
@@ -72,8 +75,8 @@ dependencies {
     implementation "androidx.startup:startup-runtime:$appStartup"
 
     // Lifecycle
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-alpha05"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0-alpha05"
 
     // Material Design
     implementation "com.google.android.material:material:$material"

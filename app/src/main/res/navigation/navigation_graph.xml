@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFrag"
-        android:name="com.indo.news.modules.home.HomeFrag"
+        android:name="com.indo.news.modules.home.view.HomeFrag"
         android:label="frag_home"
         tools:layout="@layout/frag_home">
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFrag"
-        android:name="com.indo.news.modules.detail.DetailFrag"
+        android:name="com.indo.news.modules.detail.view.DetailFrag"
         android:label="frag_detail"
         tools:layout="@layout/frag_detail">
         <argument

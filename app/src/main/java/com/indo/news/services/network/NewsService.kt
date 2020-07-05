@@ -13,4 +13,10 @@ interface NewsService {
         @Query("category") category: String,
         @Query("pageSize") pageSize: Int = Constants.PAGE_SIZE,
         @Query("page") page: Int): News
+
+    @GET("top-headlines?country=id")
+    suspend fun getRecommendedNews(
+        @Query("apiKey") apiKey: String = Constants.API_KEY,
+        @Query("pageSize") pageSize: Int = Constants.RECOMMENDED_SIZE
+    ): News
 }

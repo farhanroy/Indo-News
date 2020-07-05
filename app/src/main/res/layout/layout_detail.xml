@@ -100,7 +100,7 @@
                     android:text="@{content}" />
 
                 <TextView
-                    android:id="@+id/seeMore"
+                    android:id="@+id/tv_see_more"
                     style="@style/TextAppearanceBody1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

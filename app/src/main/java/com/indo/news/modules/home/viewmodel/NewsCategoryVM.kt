@@ -7,12 +7,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.indo.news.data.source.remote.NewsRepository
+import com.indo.news.data.source.remote.RemoteRepository
 import com.indo.news.services.db.entity.Article
 import kotlinx.coroutines.flow.Flow
 
-class HomePageVM @ViewModelInject constructor(
-    private val repository: NewsRepository,
+class NewsCategoryVM @ViewModelInject constructor(
+    private val repository: RemoteRepository,
     @Assisted private val savedStateHandle: SavedStateHandle
 ): ViewModel() {
 

@@ -1,15 +1,16 @@
-package com.indo.news.data.source
+package com.indo.news.data.source.paging
 
 import androidx.paging.PagingSource
 import com.indo.news.services.db.entity.Article
 import com.indo.news.services.network.NewsService
 import com.indo.news.utils.constant.Constants
 import retrofit2.HttpException
+import timber.log.Timber
 import java.io.IOException
 import javax.inject.Singleton
 
 @Singleton
-class NewsDataSource(
+class NewsCategoryPaging(
     private val service: NewsService,
     private val category: String
 ) : PagingSource<Int, Article>() {
@@ -25,8 +26,10 @@ class NewsDataSource(
                 nextKey = if (item.isEmpty()) null else position + 1
             )
         } catch (exception: IOException) {
+            Timber.e(exception)
             LoadResult.Error(exception)
         } catch (exception: HttpException) {
+            Timber.e(exception)
             LoadResult.Error(exception)
         }
     }

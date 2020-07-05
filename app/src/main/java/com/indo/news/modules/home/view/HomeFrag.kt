@@ -1,4 +1,4 @@
-package com.indo.news.modules.home
+package com.indo.news.modules.home.view
 
 import android.os.Bundle
 import android.view.LayoutInflater

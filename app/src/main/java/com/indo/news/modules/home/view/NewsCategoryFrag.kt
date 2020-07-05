@@ -1,20 +1,20 @@
-package com.indo.news.modules.home.page
+package com.indo.news.modules.home.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import com.indo.news.R
-import com.indo.news.databinding.PageHomeBinding
-import com.indo.news.modules.home.adapter.recyclerview.HomePageRV
+import com.indo.news.databinding.FragNewsCategoryBinding
+import com.indo.news.modules.home.adapter.recyclerview.NewsCategoryRV
 import com.indo.news.modules.home.adapter.recyclerview.ItemLoadMoreRV
-import com.indo.news.modules.home.viewmodel.HomePageVM
+import com.indo.news.modules.home.viewmodel.NewsCategoryVM
 import com.indo.news.utils.extension.setFragBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
@@ -22,11 +22,11 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class HomePage : Fragment() {
+class NewsCategoryFrag : Fragment() {
 
-    private val viewModel: HomePageVM by viewModels()
-    private lateinit var binding: PageHomeBinding
-    private val homePageAdapter = HomePageRV()
+    private val viewModel: NewsCategoryVM by viewModels()
+    private lateinit var binding: FragNewsCategoryBinding
+    private val homePageAdapter = NewsCategoryRV()
     private val category: String
         get() = arguments?.getString("category", "") ?: ""
     private var job: Job? = null
@@ -35,7 +35,7 @@ class HomePage : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = setFragBinding(R.layout.page_home, container)
+        binding = setFragBinding(R.layout.frag_news_category, container)
         return binding.root
     }
 
@@ -89,7 +89,7 @@ class HomePage : Fragment() {
     }
 
     companion object {
-        fun newInstance(category: String) = HomePage().apply {
+        fun newInstance(category: String) = NewsCategoryFrag().apply {
             arguments = bundleOf("category" to category)
         }
     }

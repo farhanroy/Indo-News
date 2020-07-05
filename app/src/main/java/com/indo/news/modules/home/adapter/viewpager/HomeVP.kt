@@ -3,7 +3,7 @@ package com.indo.news.modules.home.adapter.viewpager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.indo.news.modules.home.page.HomePage
+import com.indo.news.modules.home.view.NewsCategoryFrag
 
 class HomeVP(fm: FragmentActivity, private val newsCategory: Array<String>) :
     FragmentStateAdapter(fm) {
@@ -12,19 +12,19 @@ class HomeVP(fm: FragmentActivity, private val newsCategory: Array<String>) :
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> {
-                HomePage.newInstance("")
+                NewsCategoryFrag.newInstance("")
             }
             1 -> {
-                HomePage.newInstance(newsCategory[position])
+                NewsCategoryFrag.newInstance(newsCategory[position])
             }
             2 -> {
-                HomePage.newInstance(newsCategory[position])
+                NewsCategoryFrag.newInstance(newsCategory[position])
             }
             3 -> {
-                HomePage.newInstance(newsCategory[position])
+                NewsCategoryFrag.newInstance(newsCategory[position])
             }
             else -> {
-                HomePage.newInstance("")
+                NewsCategoryFrag.newInstance("")
             }
         }
     }

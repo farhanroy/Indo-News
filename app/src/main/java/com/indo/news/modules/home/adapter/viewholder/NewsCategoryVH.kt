@@ -9,12 +9,12 @@ import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.indo.news.R
-import com.indo.news.modules.home.HomeFragDirections
+import com.indo.news.modules.home.view.HomeFragDirections
 import com.indo.news.services.db.entity.Article
 import com.indo.news.utils.extension.TimeAgo
 import com.indo.news.utils.extension.isNull
 
-class HomePageVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class NewsCategoryVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val tvTitle = itemView.findViewById<TextView>(R.id.tv_title)
     private val tvSource = itemView.findViewById<TextView>(R.id.tv_source)
     private val tvTime = itemView.findViewById<TextView>(R.id.tv_time)
@@ -55,15 +55,15 @@ class HomePageVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         const val NEWS_ITEM1 = 1
         const val NEWS_ITEM2 = 2
 
-        fun create(parent: ViewGroup, viewType: Int): HomePageVH {
+        fun create(parent: ViewGroup, viewType: Int): NewsCategoryVH {
             return if (viewType == NEWS_ITEM1) {
                 val view = LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_news1, parent, false)
-                HomePageVH(view)
+                NewsCategoryVH(view)
             } else {
                 val view = LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_news2, parent, false)
-                HomePageVH(view)
+                NewsCategoryVH(view)
             }
         }
     }
