@@ -1,26 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ScrollView
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorLightGrey">
-
-        <LinearLayout
+        android:layout_height="match_parent">
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginBottom="@dimen/margin_content_large"
+            android:background="@color/colorLightGrey">
 
-            <include
-                android:id="@+id/detail"
-                layout="@layout/layout_detail" />
-
-            <include
-                layout="@layout/layout_recommend"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_content_medium_small" />
+                android:layout_height="wrap_content">
+                <include
+                    android:id="@+id/errorLayout"
+                    android:visibility="gone"
+                    layout="@layout/layout_error"/>
 
-        </LinearLayout>
-    </ScrollView>
+                <include
+                    android:id="@+id/loadingLayout"
+                    android:visibility="visible"
+                    layout="@layout/layout_loading"/>
+                <LinearLayout
+                    android:id="@+id/detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <include
+                        android:id="@+id/detailLayout"
+                        layout="@layout/layout_detail" />
+
+                    <include
+                        android:id="@+id/recommendLayout"
+                        layout="@layout/layout_recommend"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_content_medium_small" />
+
+                </LinearLayout>
+            </FrameLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottom_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:navigationIcon="@drawable/ic_arrow_back_ios"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

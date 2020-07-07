@@ -21,7 +21,11 @@
         tools:layout="@layout/frag_home">
         <action
             android:id="@+id/action_homeFrag_to_detailFrag2"
-            app:destination="@id/detailFrag" />
+            app:destination="@id/detailFrag"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
     </fragment>
     <fragment
         android:id="@+id/detailFrag"
