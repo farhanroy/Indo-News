@@ -9,8 +9,8 @@ import com.indo.news.data.model.Source
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-@Entity(tableName = "article_table")
-data class Article (
+@Entity(tableName = "favorite_table")
+data class Favorite (
     @PrimaryKey(autoGenerate = true) var id: Long = 0,
     @Embedded
     @field:SerializedName("source") val source: Source,

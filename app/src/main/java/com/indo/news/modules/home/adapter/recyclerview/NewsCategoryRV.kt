@@ -4,8 +4,8 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.indo.news.data.model.Article
 import com.indo.news.modules.home.adapter.viewholder.NewsCategoryVH
-import com.indo.news.services.db.entity.Article
 
 class NewsCategoryRV : PagingDataAdapter<Article, RecyclerView.ViewHolder>(REPO_COMPARATOR) {
 

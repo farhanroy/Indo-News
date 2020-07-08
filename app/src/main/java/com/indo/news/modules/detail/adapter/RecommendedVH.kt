@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.indo.news.data.model.Article
 import com.indo.news.databinding.ItemNews1Binding
-import com.indo.news.services.db.entity.Article
 import com.indo.news.utils.extension.TimeAgo
 
 class RecommendedVH(private val binding: ItemNews1Binding) : RecyclerView.ViewHolder(binding.root) {

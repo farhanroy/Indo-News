@@ -1,9 +1,7 @@
 package com.indo.news.modules.detail.view
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -43,6 +41,24 @@ class DetailFrag : Fragment() {
         initLiveData()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.detail_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
+        R.id.favorite -> {
+            true
+        }
+        R.id.share -> {
+            true
+        }
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
+    }
+
+
     private fun initView() {
         binding.detailLayout.apply {
             data = args.news
@@ -73,7 +89,7 @@ class DetailFrag : Fragment() {
     }
 
     private fun setupViewState(result: Result<News>) {
-        when(result) {
+        when (result) {
             is Result.InProgress -> {
                 binding.apply {
                     loadingLayout.root.isVisible = true

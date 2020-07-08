@@ -34,16 +34,20 @@
         tools:layout="@layout/frag_detail">
         <argument
             android:name="news"
-            app:argType="com.indo.news.services.db.entity.Article" />
+            app:argType="com.indo.news.data.model.Article" />
         <action
             android:id="@+id/action_detailFrag_to_moreFrag"
             app:destination="@id/moreFrag" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFrag"
-        android:name="com.indo.news.modules.favorite.FavoriteFrag"
+        android:name="com.indo.news.modules.favorite.view.FavoriteFrag"
         android:label="frag_favorite"
-        tools:layout="@layout/frag_favorite" />
+        tools:layout="@layout/frag_favorite" >
+        <action
+            android:id="@+id/action_favoriteFrag_to_detailFrag"
+            app:destination="@id/detailFrag" />
+    </fragment>
     <fragment
         android:id="@+id/moreFrag"
         android:name="com.indo.news.modules.more.MoreFrag"

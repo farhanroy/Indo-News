@@ -9,8 +9,8 @@ import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.indo.news.R
+import com.indo.news.data.model.Article
 import com.indo.news.modules.home.view.HomeFragDirections
-import com.indo.news.services.db.entity.Article
 import com.indo.news.utils.extension.TimeAgo
 import com.indo.news.utils.extension.isNull
 

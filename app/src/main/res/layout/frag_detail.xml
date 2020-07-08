@@ -50,6 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            app:menu="@menu/detail_menu"
             app:navigationIcon="@drawable/ic_arrow_back_ios"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

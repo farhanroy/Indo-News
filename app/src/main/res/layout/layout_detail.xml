@@ -15,7 +15,7 @@
 
         <variable
             name="data"
-            type="com.indo.news.services.db.entity.Article" />
+            type="com.indo.news.data.model.Article" />
     </data>
 
     <androidx.cardview.widget.CardView

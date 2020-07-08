@@ -1,7 +1,7 @@
 package com.indo.news.data.source.paging
 
 import androidx.paging.PagingSource
-import com.indo.news.services.db.entity.Article
+import com.indo.news.data.model.Article
 import com.indo.news.services.network.NewsService
 import com.indo.news.utils.constant.Constants
 import retrofit2.HttpException

@@ -3,7 +3,7 @@ package com.indo.news.di
 import android.content.Context
 import androidx.room.Room
 import com.indo.news.services.db.AppDatabase
-import com.indo.news.services.db.dao.ArticleDao
+import com.indo.news.services.db.dao.FavoriteDao
 import com.indo.news.utils.constant.Constants
 import dagger.Module
 import dagger.Provides
@@ -27,7 +27,7 @@ object DatabaseModule {
     }
 
     @Provides
-    fun provideArticleDao(database: AppDatabase): ArticleDao {
-        return database.articleDao()
+    fun provideFavoriteDao(database: AppDatabase): FavoriteDao {
+        return database.favoriteDao()
     }
 }
