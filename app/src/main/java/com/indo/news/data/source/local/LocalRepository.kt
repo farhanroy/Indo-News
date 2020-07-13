@@ -12,15 +12,17 @@ class LocalRepository @Inject constructor(private val favoriteDao: FavoriteDao) 
         favoriteDao.insertFavorite(data)
     }
 
-    suspend fun deleteFavorite(data: Favorite) {
-        favoriteDao.deleteFavorite(data)
+    suspend fun deleteFavorite(title: String) {
+        favoriteDao.deleteFavorite(title)
     }
 
     fun getAllFavorite(): Flow<List<Favorite>> {
         return favoriteDao.getAllFavorite()
     }
 
-    fun getFavoriteById(id: Long): Flow<Favorite> {
-        return favoriteDao.getFavoriteById(id)
+    fun getFavoriteByTitle(title: String): Flow<Favorite> {
+        return favoriteDao.getFavoriteByTitle(title)
     }
+
+    suspend fun isFavorite(title: String): Int = favoriteDao.isFavorite(title)
 }

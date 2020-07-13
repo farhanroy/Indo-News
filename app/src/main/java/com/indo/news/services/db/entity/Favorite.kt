@@ -12,8 +12,6 @@ import kotlinx.android.parcel.Parcelize
 @Entity(tableName = "favorite_table")
 data class Favorite (
     @PrimaryKey(autoGenerate = true) var id: Long = 0,
-    @Embedded
-    @field:SerializedName("source") val source: Source,
     @field:SerializedName("author") val author: String? = null,
     @field:SerializedName("title") val title: String,
     @field:SerializedName("description") val description: String,

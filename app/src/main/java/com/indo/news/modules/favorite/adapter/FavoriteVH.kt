@@ -12,7 +12,6 @@ class FavoriteVH (val binding: ItemNews1Binding): RecyclerView.ViewHolder(bindin
     fun bind(item: Favorite){
         binding.apply {
             tvTitle.text = item.title
-            tvSource.text = item.source.name
             tvTime.text = TimeAgo.getTimeAgo(item.publishedAt)
 
             Glide.with(itemView.context).load(item.urlToImage).into(ivNews)

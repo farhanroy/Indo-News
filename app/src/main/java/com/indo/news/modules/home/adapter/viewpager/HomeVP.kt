@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.indo.news.modules.home.view.NewsCategoryFrag
+import java.util.*
 
 class HomeVP(fm: FragmentActivity, private val newsCategory: Array<String>) :
     FragmentStateAdapter(fm) {
@@ -21,7 +22,7 @@ class HomeVP(fm: FragmentActivity, private val newsCategory: Array<String>) :
                 NewsCategoryFrag.newInstance(newsCategory[position])
             }
             3 -> {
-                NewsCategoryFrag.newInstance(newsCategory[position])
+                NewsCategoryFrag.newInstance(newsCategory[position].toLowerCase(Locale.ROOT))
             }
             else -> {
                 NewsCategoryFrag.newInstance("")

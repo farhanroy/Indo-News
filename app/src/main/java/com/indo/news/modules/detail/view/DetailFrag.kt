@@ -1,11 +1,15 @@
 package com.indo.news.modules.detail.view
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.indo.news.R
@@ -17,6 +21,7 @@ import com.indo.news.utils.Result
 import com.indo.news.utils.extension.TimeAgo
 import com.indo.news.utils.extension.setFragBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class DetailFrag : Fragment() {
@@ -37,27 +42,10 @@ class DetailFrag : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        getFavorite()
         initView()
         initLiveData()
     }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.detail_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
-        R.id.favorite -> {
-            true
-        }
-        R.id.share -> {
-            true
-        }
-        else -> {
-            super.onOptionsItemSelected(item)
-        }
-    }
-
 
     private fun initView() {
         binding.detailLayout.apply {
@@ -72,8 +60,11 @@ class DetailFrag : Fragment() {
         binding.errorLayout.btnRetry.setOnClickListener {
             initLiveData()
         }
-        binding.bottomAppbar.setNavigationOnClickListener {
+        binding.bottomAppbar.btnBack.setOnClickListener {
             findNavController().navigateUp()
+        }
+        binding.bottomAppbar.btnFavorite.setOnClickListener {
+            setFavorite()
         }
     }
 
@@ -81,6 +72,28 @@ class DetailFrag : Fragment() {
         viewModel.getRecommendedNews.observe(viewLifecycleOwner, Observer {
             setupViewState(it)
         })
+    }
+
+    private fun getFavorite() {
+        lifecycleScope.launch {
+            if (viewModel.isFavorite(args.news.title) == 1) {
+                binding.bottomAppbar.btnFavorite.setImageResource(R.drawable.ic_favorite)
+            } else {
+                binding.bottomAppbar.btnFavorite.setImageResource(R.drawable.ic_favorite_border)
+            }
+        }
+    }
+
+    private fun setFavorite() {
+        lifecycleScope.launch {
+            if (viewModel.isFavorite(args.news.title) == 1) {
+                viewModel.deleteFavorite(args.news)
+                binding.bottomAppbar.btnFavorite.setImageResource(R.drawable.ic_favorite_border)
+            } else {
+                viewModel.insertFavorite(args.news)
+                binding.bottomAppbar.btnFavorite.setImageResource(R.drawable.ic_favorite)
+            }
+        }
     }
 
     private fun initAdapter(listNews: News) {

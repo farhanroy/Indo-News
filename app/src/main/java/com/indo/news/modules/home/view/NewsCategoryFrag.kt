@@ -54,7 +54,7 @@ class NewsCategoryFrag : Fragment() {
 
     private fun initViews() {
         binding.errorLayout.btnRetry.setOnClickListener {
-            setNews()
+            homePageAdapter.retry()
         }
     }
 
@@ -83,7 +83,7 @@ class NewsCategoryFrag : Fragment() {
         val swipeRefresh = binding.swipeRefresh
         swipeRefresh.setOnRefreshListener {
             swipeRefresh.isRefreshing = true
-            setNews()
+            homePageAdapter.refresh()
             swipeRefresh.isRefreshing = false
         }
     }

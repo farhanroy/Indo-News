@@ -24,6 +24,6 @@ data class Article (
 
 @Parcelize
 data class Source (
-    @SerializedName("id") val sourceId: String,
-    @SerializedName("name") val name: String
+    @field:SerializedName("id") val sourceId: String,
+    @field:SerializedName("name") val name: String
 ): Parcelable
