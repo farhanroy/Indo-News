@@ -38,6 +38,9 @@
         <action
             android:id="@+id/action_detailFrag_to_moreFrag"
             app:destination="@id/moreFrag" />
+        <action
+            android:id="@+id/action_detailFrag_self"
+            app:destination="@id/detailFrag" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFrag"

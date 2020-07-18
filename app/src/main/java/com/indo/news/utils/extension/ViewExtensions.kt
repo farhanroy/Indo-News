@@ -15,6 +15,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import com.indo.news.data.model.Article
+import com.indo.news.data.model.Source
 import com.indo.news.services.db.entity.Favorite
 
 
@@ -49,10 +50,17 @@ fun AppCompatActivity.context(): Context {
 
 fun Any?.isNull(): Boolean = this == null
 
-fun tintMenuIcon(item: MenuItem) {
-    val itemIcon: Drawable = item.icon
-    val iconWrapper = DrawableCompat.wrap(itemIcon)
-    item.icon = iconWrapper
+fun favoriteToArticle(favorite: Favorite): Article {
+    return Article(
+        source = Source("", ""),
+        author = favorite.author,
+        title = favorite.title,
+        description = favorite.description,
+        url = favorite.url,
+        urlToImage = favorite.urlToImage,
+        publishedAt = favorite.publishedAt,
+        content = favorite.content
+    )
 }
 
 fun articleToFavorite(article: Article): Favorite {

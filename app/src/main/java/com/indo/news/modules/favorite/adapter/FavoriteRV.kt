@@ -27,10 +27,8 @@ class FavoriteRV : RecyclerView.Adapter<FavoriteVH>() {
     }
 }
 
-class FavoriteDiffCallback(
-    private val oldList: List<Favorite>,
-    private val newList: List<Favorite>
-) : DiffUtil.Callback() {
+class FavoriteDiffCallback(private val oldList: List<Favorite>, private val newList: List<Favorite>)
+    : DiffUtil.Callback() {
     override fun getOldListSize(): Int = oldList.size
     override fun getNewListSize(): Int = newList.size
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
