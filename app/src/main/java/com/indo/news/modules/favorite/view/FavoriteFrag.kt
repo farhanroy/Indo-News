@@ -5,12 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.indo.news.R
 import com.indo.news.databinding.FragFavoriteBinding
 import com.indo.news.modules.favorite.adapter.FavoriteRV
 import com.indo.news.modules.favorite.viewmodel.FavoriteVM
+import com.indo.news.utils.extension.isNull
 import com.indo.news.utils.extension.setFragBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,11 +39,18 @@ class FavoriteFrag : Fragment() {
 
     private fun initLiveData() {
         viewModel.getAllFavorite.observe(viewLifecycleOwner, Observer {
-            favoriteAdapter.submitData(it)
+            if (it.isNull() || it.isEmpty()) {
+                binding.errorLayout.error.isVisible = true
+            } else {
+                binding.errorLayout.error.isVisible = false
+                favoriteAdapter.submitData(it)
+            }
         })
     }
 
     private fun initViews() {
         binding.rvFavorite.adapter = favoriteAdapter
+        binding.errorLayout.tvErrorMessage.text = getString(R.string.empty)
+        binding.errorLayout.btnRetry.isVisible = false
     }
 }

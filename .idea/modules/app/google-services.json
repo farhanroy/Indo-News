@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "599744042057",
+    "firebase_url": "https://indo-news-9c1a2.firebaseio.com",
+    "project_id": "indo-news-9c1a2",
+    "storage_bucket": "indo-news-9c1a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599744042057:android:62c2576e6a9ec6752e5b98",
+        "android_client_info": {
+          "package_name": "com.indo.news.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599744042057-ct1q84tha4n8nj5i4gaiorhe58nq647m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.indo.news.debug",
+            "certificate_hash": "f3b0895923f795bd61d9505df65da14afa05399d"
+          }
+        },
+        {
+          "client_id": "599744042057-6osr6imcmml8rot0u507uc81oaf8q9pa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0IXSEOk0EHcuIGomHeloRGNpQQXpVaPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599744042057-6osr6imcmml8rot0u507uc81oaf8q9pa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

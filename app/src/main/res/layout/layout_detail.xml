@@ -78,6 +78,16 @@
                 android:text="@{data.description}"
                 tools:text="Berikut daftar 25 smarphone dari berbagai produk yang dilengkapi dengan baterai berdaya 5.000 hingga 6.000 mAh." />
 
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/ad_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_content_medium_small"
+                ads:adSize="SMART_BANNER"
+                ads:adUnitId="ca-app-pub-3166093741795168/6832569952">
+            </com.google.android.gms.ads.AdView>
+
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/appCompatImageView2"
                 android:layout_width="match_parent"

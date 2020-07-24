@@ -4,21 +4,38 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs"
 apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 
 def apiKeyPropertiesFile = rootProject.file("apikey.properties")
 def apiKeyProperties = new Properties()
 apiKeyProperties.load(new FileInputStream(apiKeyPropertiesFile))
 
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    compileSdkVersion 30
+    buildToolsVersion "30.0.1"
 
     defaultConfig {
         applicationId "com.indo.news"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         buildConfigField("String", "BASE_URL", "\"https://newsapi.org/v2/\"")
         buildConfigField("String", "API_KEY", apiKeyProperties['API_KEY'])
@@ -39,13 +56,22 @@ android {
 
         release {
             debuggable false
-            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
     }
 
     androidExtensions {
@@ -75,8 +101,8 @@ dependencies {
     implementation "androidx.startup:startup-runtime:$appStartup"
 
     // Lifecycle
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-alpha05"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0-alpha05"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-alpha06"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0-alpha06"
 
     // Material Design
     implementation "com.google.android.material:material:$material"
@@ -107,6 +133,11 @@ dependencies {
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltViewModel"
     kapt "androidx.hilt:hilt-compiler:$hiltViewModel"
+
+    // Firebase
+    implementation "com.google.firebase:firebase-ads:$firebaseAds"
+    implementation "com.google.firebase:firebase-crashlytics:$crashlytics"
+    implementation "com.google.firebase:firebase-analytics-ktx:$firebaseAnalytics"
 
     // sdp & ssp
     implementation "com.intuit.ssp:ssp-android:$sdpssp"

@@ -27,7 +27,7 @@
             app:layout_constraintTop_toBottomOf="@+id/appCompatImageView3" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tv_error_message"
             style="@style/TextAppearanceBody1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,6 +46,6 @@
             android:text="@string/try_again"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_error_message" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

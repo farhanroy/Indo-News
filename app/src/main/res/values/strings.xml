@@ -16,6 +16,7 @@
     <string name="favorite">Favorite</string>
     <string name="recommend_article">Recommend Article</string>
     <string name="share">Share</string>
+    <string name="empty">"Data is Empty "</string>
 
     <string-array name="news_category">
         <item>@string/headline</item>

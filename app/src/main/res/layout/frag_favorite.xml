@@ -11,5 +11,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+        <include
+            android:id="@+id/errorLayout"
+            layout="@layout/layout_error"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

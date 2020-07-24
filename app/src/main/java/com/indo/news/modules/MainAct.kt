@@ -1,14 +1,17 @@
 package com.indo.news.modules
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import androidx.navigation.NavDestination
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.indo.news.R
 import com.indo.news.databinding.ActMainBinding
 import com.indo.news.utils.extension.setActBinding
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class MainAct : AppCompatActivity() {
@@ -30,11 +33,7 @@ class MainAct : AppCompatActivity() {
         val bottomNav = binding.bottomNavigationView
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.splashFrag || destination.id == R.id.detailFrag) {
-                bottomNav.visibility = View.GONE
-            } else {
-                bottomNav.visibility = View.VISIBLE
-            }
+            bottomNav.isVisible = destination.id == R.id.homeFrag || destination.id == R.id.favoriteFrag
         }
 
         bottomNav.setupWithNavController(navController)

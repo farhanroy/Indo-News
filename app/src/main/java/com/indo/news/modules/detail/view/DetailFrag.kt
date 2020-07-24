@@ -1,5 +1,6 @@
 package com.indo.news.modules.detail.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
 import com.indo.news.R
 import com.indo.news.data.model.News
 import com.indo.news.databinding.FragDetailBinding
@@ -21,6 +24,7 @@ import com.indo.news.utils.extension.TimeAgo
 import com.indo.news.utils.extension.setFragBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 @AndroidEntryPoint
 class DetailFrag : Fragment() {
@@ -44,6 +48,7 @@ class DetailFrag : Fragment() {
         getFavorite()
         initView()
         initLiveData()
+        initAds()
     }
 
     private fun initView() {
@@ -65,6 +70,7 @@ class DetailFrag : Fragment() {
         binding.bottomAppbar.btnFavorite.setOnClickListener {
             setFavorite()
         }
+        binding.bottomAppbar.btnShare.setOnClickListener { actionShare() }
     }
 
     private fun initLiveData() {
@@ -124,4 +130,25 @@ class DetailFrag : Fragment() {
         }
     }
 
+    private fun initAds() {
+        val adView = binding.detailLayout.adView
+
+        adView.loadAd(AdRequest.Builder().build())
+        adView.adListener = object : AdListener() {
+            override fun onAdFailedToLoad(errorCode: Int) {
+                super.onAdFailedToLoad(errorCode)
+                Timber.d(errorCode.toString())
+            }
+        }
+    }
+
+    private fun actionShare() {
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, args.news.url)
+            type = "text/plain"
+        }
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
+    }
 }
