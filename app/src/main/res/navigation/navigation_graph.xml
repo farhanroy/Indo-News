@@ -38,9 +38,6 @@
             android:name="news"
             app:argType="com.indo.news.data.model.Article" />
         <action
-            android:id="@+id/action_detailFrag_to_moreFrag"
-            app:destination="@id/moreFrag" />
-        <action
             android:id="@+id/action_detailFrag_self"
             app:destination="@id/detailFrag" />
     </fragment>
@@ -52,14 +49,5 @@
         <action
             android:id="@+id/action_favoriteFrag_to_detailFrag"
             app:destination="@id/detailFrag" />
-    </fragment>
-    <fragment
-        android:id="@+id/moreFrag"
-        android:name="com.indo.news.modules.more.MoreFrag"
-        android:label="frag_more"
-        tools:layout="@layout/frag_more" >
-        <argument
-            android:name="url"
-            app:argType="string" />
     </fragment>
 </navigation>

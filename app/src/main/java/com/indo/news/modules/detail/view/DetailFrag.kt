@@ -56,10 +56,7 @@ class DetailFrag : Fragment() {
             data = args.news
             time = TimeAgo.getTimeAgo(args.news.publishedAt)
             content = args.news.content?.slice(0..200)
-            tvSeeMore.setOnClickListener {
-                val action = DetailFragDirections.actionDetailFragToMoreFrag(args.news.url)
-                findNavController().navigate(action)
-            }
+
         }
         binding.errorLayout.btnRetry.setOnClickListener {
             initLiveData()

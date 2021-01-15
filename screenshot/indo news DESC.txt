@@ -1,0 +1,29 @@
+Aplikasi berita teringan, dapatkan berita terpopuler dan terpercaya di Indo News
+
+=================================================================================================
+
+Indo News, Aplikasi berita ringan dan gratis dengan menyajikan berita - berita terpopuler dan terpercaya dari sumber - sumber 
+berita terkemuka seperti liputan6, kompas, detik, dan lain - lain. Banyak kategori yang disajikan mulai dari Headline news hingga
+berita Olahraga
+
+Dengan tampilan antarmuka yang sederhana dan santai, pengguna dapat membaca berita lebih mudah dan nyaman. Dan juga ada beberapa
+fitur pendukung lainnya, yang membuat aplikasi ini semakin menarik untuk di coba. Di aplikasi ini berita dikategorikan menjadi
+beberapa macam diantaranya headline news, entertainment, bussiness, dan sport.
+
+Headline news berisi berita - berita yang sedang hangat diperbincangkan oleh publik saat ini, Entertainment berisi yang berkaitan 
+dengan dunia hiburan tanah air, Bussiness berisikan sejumlah berita yang yang berhubungan dalam masalah bisnis di Indonesia, sementara
+Sport mencakup informasi seputar dunia olahraga seperti sepak bola, basket, motogp dan lain sebagainya
+
+Pengembang menggunakan data yang disediakan oleh newsapi.org yang diperoleh secara legal. Newsapi merupakan provider berita
+yang mengumpulkan berita - berita dari seluruh penjuru dunia sehingga bisa dinikmati oleh siapun dan kapanpun secara gratis.
+Untuk itu aplikasi menarik sekali untuk dicoba
+
+Fitur yang disediakan aplikasi:
+- Kategori Berita
+- Detail Berita
+- See More
+- Tambahkan ke Favorit
+- Swipe to refresh
+
+Penasaran dengan semua fitur dan berita yang disajikan aplikasi Indo News, YUK buruan INSTALL
+
