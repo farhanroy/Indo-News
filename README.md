@@ -11,22 +11,16 @@ Aplikasi pusat berita indonesia terlengkap akurat dan terpercaya, dari berita tr
 <p>
   <tr>
   <td>
-    <img src="https://github.com/farhanroy/indo_news/blob/master/screenshot/Screenshot_2020-06-11-20-14-56.png" width="240" height="394"  title="hover text"> 
+    <img src="https://raw.githubusercontent.com/farhanroy/indo-news/master/screenshot/screen-0.jpg" width="240" height="480"  title="hover text"> 
   </td>
     <td>
-    <img src="https://github.com/farhanroy/indo_news/blob/master/screenshot/Screenshot_2020-06-11-20-14-23.png" width="240" height="394"  title="hover text"> 
+    <img src="https://raw.githubusercontent.com/farhanroy/indo-news/master/screenshot/screen-1.jpg" width="240" height="480"  title="hover text"> 
   </td>
     <td>
-    <img src="https://github.com/farhanroy/indo_news/blob/master/screenshot/Screenshot_2020-06-11-20-14-08.png" width="240" height="394"  title="hover text"> 
+    <img src="https://raw.githubusercontent.com/farhanroy/indo-news/master/screenshot/screen-2.jpg" width="240" height="480"  title="hover text"> 
   </td>
     <td>
-    <img src="https://github.com/farhanroy/indo_news/blob/master/screenshot/Screenshot_2020-06-11-20-14-16.png" width="240" height="394"  title="hover text"> 
-  </td>
-    <td>
-    <img src="https://github.com/farhanroy/indo_news/blob/master/screenshot/Screenshot_2020-06-11-20-13-13.png" width="240" height="394"  title="hover text"> 
-  </td>
-    <td>
-    <img src="https://github.com/farhanroy/indo_news/blob/master/screenshot/Screenshot_2020-06-11-20-14-36.png" width="240" height="394"  title="hover text"> 
+    <img src="https://raw.githubusercontent.com/farhanroy/indo-news/master/screenshot/screen-3.jpg" width="240" height="480"  title="hover text"> 
   </td>
 </tr>
 </p>
