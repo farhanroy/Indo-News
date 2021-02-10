@@ -1,4 +1,4 @@
-# Aplikasi Indo News
+<h1 align="center">Aplikasi Indo News</h1>
 Aplikasi pusat berita indonesia terlengkap akurat dan terpercaya, dari berita trending, entertain, olahraga, ataupun bisnis semua ada di aplikasi ini
 
 * Version 1.0.0
