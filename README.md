@@ -1,4 +1,5 @@
 <h1 align="center">Aplikasi Indo News</h1>
+<p align="center"><img src="https://raw.githubusercontent.com/farhanroy/Indo-News/master/screenshot/1.png"></p>
 Aplikasi pusat berita indonesia terlengkap akurat dan terpercaya, dari berita trending, entertain, olahraga, ataupun bisnis semua ada di aplikasi ini
 
 * Version 1.0.0
