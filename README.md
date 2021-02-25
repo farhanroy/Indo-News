@@ -1,5 +1,5 @@
 <h1 align="center">Aplikasi Indo News</h1>
-<p align="center"><img src="https://raw.githubusercontent.com/farhanroy/Indo-News/master/screenshot/1.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/farhanroy/Indo-News/master/IndoNews/screenshot/1.png"></p>
 Aplikasi pusat berita indonesia terlengkap akurat dan terpercaya, dari berita trending, entertain, olahraga, ataupun bisnis semua ada di aplikasi ini
 
 * Version 1.0.0
@@ -12,16 +12,16 @@ Aplikasi pusat berita indonesia terlengkap akurat dan terpercaya, dari berita tr
 <p>
   <tr>
   <td>
-    <img src="https://raw.githubusercontent.com/farhanroy/indo-news/master/screenshot/screen-0.jpg" width="240" height="480"  title="hover text"> 
+    <img src="https://raw.githubusercontent.com/farhanroy/indo-news/master/IndoNews/screenshot/screen-0.jpg" width="240" height="480"  title="hover text"> 
   </td>
     <td>
-    <img src="https://raw.githubusercontent.com/farhanroy/indo-news/master/screenshot/screen-1.jpg" width="240" height="480"  title="hover text"> 
+    <img src="https://raw.githubusercontent.com/farhanroy/indo-news/master/IndoNews/screenshot/screen-1.jpg" width="240" height="480"  title="hover text"> 
   </td>
     <td>
-    <img src="https://raw.githubusercontent.com/farhanroy/indo-news/master/screenshot/screen-2.jpg" width="240" height="480"  title="hover text"> 
+    <img src="https://raw.githubusercontent.com/farhanroy/indo-news/master/IndoNews/screenshot/screen-2.jpg" width="240" height="480"  title="hover text"> 
   </td>
     <td>
-    <img src="https://raw.githubusercontent.com/farhanroy/indo-news/master/screenshot/screen-3.jpg" width="240" height="480"  title="hover text"> 
+    <img src="https://raw.githubusercontent.com/farhanroy/indo-news/master/IndoNews/screenshot/screen-3.jpg" width="240" height="480"  title="hover text"> 
   </td>
 </tr>
 </p>
